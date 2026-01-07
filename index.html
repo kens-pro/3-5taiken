@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>無料体験レッスン｜就学前のお子さん向け音楽教室</title>
+<meta name="description" content="家では元気なのに外では自信が出にくい…そんな就学前のお子さんとママへ。無料体験レッスンで小さな一歩を一緒に見つけませんか？" />
+<style>
+:root{
+--bg: #fff7f9;
+--surface: #ffffff;
+--text: #1c1c1c;
+--muted: #5a5a5a;
+--line: rgba(0,0,0,.10);
+--brand: #d86a84;     /* くすみピンク */
+--brand2:#f3b6c4;     /* さらに淡い */
+--accent:#2a7f74;     /* 差し色（落ち着いた緑） */
+--shadow: 0 16px 40px rgba(0,0,0,.10);
+--radius: 18px;
+--radius2: 26px;
+--max: 1060px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 70% -10%, rgba(216,106,132,.18), transparent 60%),
+    radial-gradient(900px 500px at 10% 10%, rgba(42,127,116,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg), #fff 60%);
+}
+
+a{color:inherit; text-decoration: none;}
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 18px;
+}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.75);
+  border-bottom: 1px solid var(--line);
+}
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 0;
+}
+.logo{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  min-width: 180px;
+}
+.logo-img {
+  width: 44px;          /* ロゴの横幅（お好みで調整） */
+  height: 44px;         /* ロゴの高さ（お好みで調整） */
+  object-fit: contain;  /* 画像を歪ませずに表示 */
+  flex: 0 0 auto;       /* 画像が潰れないように固定 */
+}
+.brandname{
+  line-height:1.1;
+}
+.brandname strong{display:block; font-size:14px; letter-spacing:.02em}
+.brandname span{display:block; font-size:12px; color:var(--muted)}
+nav{
+  display:none;
+  gap:14px;
+  align-items:center;
+  font-size:13px;
+  color:var(--muted);
+}
+nav a{
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius: 12px;
+}
+nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
+.header-cta{
+  display:flex; gap:10px; align-items:center;
+}
+
+/* Buttons */
+.btn{
+  appearance:none;
+  border:1px solid transparent;
+  border-radius: 14px;
+  padding:12px 14px;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  transition: transform .08s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  user-select:none;
+  min-height: 44px; /* タップしやすく */
+}
+.btn:active{transform: translateY(1px)}
+.btn-primary{
+  background: linear-gradient(135deg, var(--brand), #e89aac);
+  color:#fff;
+  box-shadow: 0 14px 30px rgba(216,106,132,.30);
+}
+.btn-primary:hover{box-shadow: 0 18px 36px rgba(216,106,132,.36)}
+.btn-primary:disabled{ opacity: 0.7; cursor: not-allowed; transform: none; }
+.btn-ghost{
+  background: rgba(255,255,255,.70);
+  border-color: var(--line);
+  color: var(--text);
+}
+.btn-ghost:hover{background:#fff}
+.btn-tel{
+  background: linear-gradient(135deg, rgba(42,127,116,1), rgba(42,127,116,.80));
+  color:#fff;
+  box-shadow: 0 14px 30px rgba(42,127,116,.22);
+}
+.btn-tel:hover{box-shadow: 0 18px 36px rgba(42,127,116,.28)}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius: 999px;
+  background: rgba(216,106,132,.12);
+  color: #7b2f3f;
+  border: 1px solid rgba(216,106,132,.18);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero{
+  padding: 28px 0 10px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.hero-card{
+  background: rgba(255,255,255,.82);
+  border: 1px solid var(--line);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.hero-card .inner{padding: 22px}
+.headline{
+  margin: 12px 0 10px;
+  font-size: clamp(22px, 2.6vw, 34px);
+  letter-spacing: .01em;
+  line-height: 1.25;
+}
+.sub{
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 15px;
+}
+.hero-cta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 12px;
+}
+.trust-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+.trust-item{
+  display:flex; align-items:center; gap:8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.side{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+.side-card{
+  background: rgba(255,255,255,.86);
+  border: 1px solid var(--line);
+  border-radius: var(--radius2);
+  box-shadow: 0 12px 26px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+.side-card .inner{padding: 18px}
+.side-title{
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .02em;
+  margin: 0 0 10px;
+}
+
+/* Section */
+section{padding: 26px 0}
+.section-title{
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: .02em;
+}
+.section-lead{
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14.5px;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.card{
+  background: rgba(255,255,255,.86);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+  padding: 16px;
+  min-height: 120px;
+}
+.card h3{
+  margin: 0 0 8px;
+  font-size: 15px;
+  letter-spacing: .01em;
+}
+.card p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 14px;
+}
+
+.quote{
+  background: linear-gradient(135deg, rgba(216,106,132,.08), rgba(42,127,116,.06));
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius2);
+  padding: 16px;
+}
+.quote p{margin: 0; line-height: 1.8; color: var(--text)}
+.quote small{display:block; margin-top: 8px; color: var(--muted)}
+
+.list{
+  display:grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.li{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+  padding: 14px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.86);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+.badge{
+  width: 34px; height: 34px;
+  border-radius: 14px;
+  background: rgba(216,106,132,.18);
+  border: 1px solid rgba(216,106,132,.22);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  color: #7b2f3f;
+  flex: 0 0 auto;
+}
+.li strong{display:block; margin: 2px 0 6px}
+.li span{display:block; color: var(--muted); line-height:1.75; font-size:14px}
+
+/* Form */
+.form-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items:start;
+}
+form{
+  background: rgba(255,255,255,.92);
+  border: 1px solid var(--line);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+.field{
+  display:grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+label{
+  font-size: 13px;
+  font-weight: 800;
+  color: #333;
+}
+input, select, textarea{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.14);
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+}
+textarea{min-height: 96px; resize: vertical}
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(216,106,132,.55);
+  box-shadow: 0 0 0 4px rgba(216,106,132,.14);
+}
+.help{
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.form-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap:wrap;
+  margin-top: 8px;
+}
+.note{
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.ok{
+  display:none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(42,127,116,.10);
+  border: 1px solid rgba(42,127,116,.22);
+  color: #1f5f57;
+  font-weight: 800;
+  line-height: 1.6;
+  font-size: 13.5px;
+  text-align: center;
+}
+.err{
+  display:none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(220, 60, 60, .08);
+  border: 1px solid rgba(220, 60, 60, .20);
+  color: #7d1f1f;
+  font-weight: 800;
+  line-height: 1.6;
+  font-size: 13.5px;
+  text-align: center;
+}
+
+/* FAQ */
+details{
+  background: rgba(255,255,255,.86);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: 0 10px 22px rgba(0,0,0,.06);
+}
+details + details{margin-top: 10px}
+summary{
+  cursor:pointer;
+  font-weight: 900;
+  font-size: 14px;
+  list-style: none;
+}
+summary::-webkit-details-marker{display:none}
+details p{
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 14px;
+}
+
+/* Footer + Sticky CTA */
+footer{
+  padding: 28px 0 100px; /* sticky分 */
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.8;
+}
+
+.sticky{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+}
+.sticky .bar{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  justify-content:space-between;
+  padding: 10px 0;
+}
+.sticky .text{
+  display:none;
+  flex-direction:column;
+  gap: 2px;
+  min-width: 160px;
+}
+.sticky .text strong{font-size: 13px}
+.sticky .text span{font-size: 12px; color: var(--muted)}
+.sticky .actions{
+  display:flex;
+  gap: 10px;
+  width: 100%;
+}
+.sticky .actions a, .sticky .actions button{
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Responsive */
+@media (min-width: 860px){
+  nav{display:flex}
+  .sticky .text{display:flex}
+  .sticky .actions{width: auto}
+  .sticky .actions a, .sticky .actions button{flex: 0 0 auto; min-width: 180px}
+}
+@media (max-width: 940px){
+  .hero-grid{grid-template-columns: 1fr}
+  .form-wrap{grid-template-columns: 1fr}
+  .grid-3{grid-template-columns: 1fr}
+}
+
+/* Small helpers */
+.muted{color: var(--muted)}
+.divider{
+  height:1px; background: var(--line);
+  margin: 18px 0;
+}
+.kicker{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+}
+.mini{
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);
+  border:0;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="topbar">
+<div class="logo" aria-label="教室ロゴ">
+<img src="images/favicon.png" alt="教室ロゴ" class="logo-img">
+<div class="brandname">
+<strong>就学前のお子さん向け 音楽教室</strong>
+<span>無料体験レッスン 受付中</span>
+</div>
+</div>
+    <nav aria-label="ページ内メニュー">
+      <a href="#about">どんな教室？</a>
+      <a href="#scenes">体験で見られること</a>
+      <a href="#flow">体験の流れ</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#apply">申し込み</a>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-ghost" href="tel:0740-22-2063" data-track="tel_header" aria-label="電話で問い合わせ">
+        📞 電話
+      </a>
+      <a class="btn btn-primary" href="#apply" data-track="cta_header" aria-label="無料体験を申し込む">
+        ✨ 無料体験を申し込む
+      </a>
+    </div>
+  </div>
+</div>
+</header>
+<main>
+<!-- HERO -->
+<div class="hero">
+<div class="container">
+<div class="hero-grid">
+<div class="hero-card">
+<div class="inner">
+<div class="kicker">
+<span class="pill">無料体験レッスン</span>
+<span class="pill" style="background:rgba(42,127,116,.10);border-color:rgba(42,127,116,.18);color:#1f5f57;">就学前（未就学）</span>
+<span class="pill" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);color:#333;">ママ向けの安心設計</span>
+</div>
+          <h1 class="headline">🌟 家でのお子さんと外でのお子さん<br/>そのギャップに悩むママへ</h1>
+
+          <p class="sub">
+            お家では元気いっぱいなのに、外ではなかなか自信が持てない…。
+            「どうサポートしたらいいのかな？」と悩む気持ち、ひとりで抱えなくて大丈夫です。<br/>
+            無料体験レッスンで、お子さんの<strong>“小さな一歩”</strong>が見つかる瞬間を一緒に確かめてみませんか？
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#apply" data-track="cta_hero">
+              ✨ 無料体験を申し込む
+            </a>
+            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_hero">
+              📞 電話で相談する
+            </a>
+            <a class="btn btn-ghost" href="#scenes" data-track="read_more">
+              👀 体験で見られること
+            </a>
+          </div>
+
+          <div class="trust-row" aria-label="安心ポイント">
+            <div class="trust-item">✅ はじめてでもOK</div>
+            <div class="trust-item">✅ ママ同伴OK</div>
+            <div class="trust-item">✅ 無理な勧誘一切なし</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="quote" aria-label="共感メッセージ">
+            <p>
+              周りに相談しても具体策が見つからず、「自分一人ではどうしたらいいんだろう」と感じること、ありますよね。<br/>
+              この無料体験は、そんなママのための“確かめる時間”でもあります。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="side-card">
+          <div class="inner">
+            <p class="side-title">今日、ここがゴールです</p>
+            <ul class="list" style="margin:0; padding:0;">
+              <li class="mini">・この教室がご自身とお子様にピッタリか判断できる。</li>
+              <li class="mini">・申込、相談方法が簡単にわかる。</li>
+              <li class="mini">・習い事を考えるキッカケが増える</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <div class="inner">
+            <p class="side-title">持ち物はこれだけ</p>
+            <p class="mini">・動きやすい服装　・筆記用具・（できれば）上靴</p>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <div class="inner">
+            <p class="side-title">対象と教室</p>
+            <p class="mini">対象：2026年春 年少・年中・年長さん（未就学）</p>
+            <p class="mini">場所：ヤマハ音楽教室　<br>㈱トリイ　大津わにセンター　<br>大津市和邇中浜366　今西ビル2F</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">トリイの音楽教室は、こんな場所です</h2>
+    <p class="section-lead">
+      ママの「どうしたらいいんだろう」を、いきなり正解に導く場所ではなく、<br/>
+      まずは一緒に状況を受け止めて、<strong>お子さんの“できた”の芽</strong>を丁寧に見つけていく教室です。
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>🌷 ママの気持ちに寄り添う親子同伴型</h3>
+        <p>「相談しても具体策がない…」という不安に、体験の場で“実際の様子”から一緒に確認していきます。</p>
+      </div>
+      <div class="card">
+        <h3>🎵 年齢に応じた独自カリキュラム</h3>
+        <p>見て・真似て・少しやってみる。子どもが自分のペースで踏み出しやすい声かけと流れを大切にしています。</p>
+      </div>
+      <div class="card">
+        <h3>🫶 無理に急がせない成功体験</h3>
+        <p>できる・できないより、「やってみたい」「ちょっとできた」を積み重ねることを優先します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCENES -->
+<section id="scenes">
+  <div class="container">
+    <h2 class="section-title">無料体験で見られる「小さな一歩」</h2>
+    <p class="section-lead">
+      体験レッスンでは、さまざまなお子さんがそれぞれのペースで小さな一歩を踏み出していきます。<br/>
+      ここは“上手にできるか”より、“動き出す瞬間”を見つけるところです。
+    </p>
+
+    <ul class="list" aria-label="体験で見られる場面">
+      <li class="li">
+        <div class="badge">1</div>
+        <div>
+          <strong>歌うのが恥ずかしかった子が…</strong>
+          <span>
+            隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。
+          </span>
+        </div>
+      </li>
+
+      <li class="li">
+        <div class="badge">2</div>
+        <div>
+          <strong>先生の前に行けなかった子が…</strong>
+          <span>
+            「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、
+            返すときに「ありがとう」が言える子も出てきます。
+          </span>
+        </div>
+      </li>
+
+      <li class="li">
+        <div class="badge">3</div>
+        <div>
+          <strong>「タンタンタン♪」のリズムが…</strong>
+          <span>
+            「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。
+            （積極的なリズム体験）
+          </span>
+        </div>
+      </li>
+
+      <li class="li">
+        <div class="badge">4</div>
+        <div>
+          <strong>先生のお話し中に…</strong>
+          <span>
+            ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。
+          </span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <div class="quote" aria-label="体験後のイメージ">
+      <p>
+        レッスンが終わった後、<br/>
+        「楽しかった！」と少し自信を持った表情でお母さんに駆け寄ってくるわが子を見て、<br/>
+        「この子、ちょっと変わったかも」と感じることがあるかもしれません。
+      </p>
+      <small>※変化の出方には個人差があります。体験は“合うかどうかを確かめる時間”としてご利用ください。</small>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="container">
+    <h2 class="section-title">無料体験レッスンの流れ</h2>
+    <p class="section-lead">実際の運用に合わせて自由に編集してください。初めての方が不安にならないよう、“見通し”を明確にするのがコツです。</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>① 受付・ヒアリング</h3>
+        <p>お母さんの気になることをすべてお聞きし、お答えします。お子さんの普段の様子を簡単に伺います。</p>
+      </div>
+      <div class="card">
+        <h3>② 体験レッスン</h3>
+        <p>ヒアリングをもとに先生が音・リズム・歌・鍵盤に触れながら、無理なく参加できる内容で進めます。</p>
+      </div>
+      <div class="card">
+        <h3>③ ふりかえり・相談</h3>
+        <p>その日の様子を一緒にふりかえり、すべての質問にお答えします。通い方や不安点を気軽にご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title">よくある質問</h2>
+   
+    <details>
+      <summary>Q. 人見知りで、参加できるか心配です。</summary>
+      <p>人見知りは感性のアンテナが高い傾向があります。無理に前に出させることはせず、お子さんのペースを大切に進めます。</p>
+    </details>
+
+    <details>
+      <summary>Q. 体験後、必ず入会しないといけませんか？</summary>
+      <p>いいえ。体験は「その子とご家族に合うかどうか」を確かめる時間です。ご家庭の状況に合わせてご検討ください。</p>
+    </details>
+
+    <details>
+      <summary>Q. 何歳から参加できますか？</summary>
+      <p>年少〜年長（未就学）のお子さんが対象です。グループレッスンと個人レッスンがあります。</p>
+    </details>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+  <div class="container">
+    <h2 class="section-title">無料体験レッスン お申し込み</h2>
+    <p class="section-lead">
+      お母さんはひとりじゃありません。<br/>
+      「うちの子に合うかな？」の段階から、気軽にご相談ください。
+    </p>
+
+    <div class="form-wrap">
+      <form id="applyForm" novalidate>
+        <!-- Formspree 制御用の隠しフィールド -->
+        <input type="hidden" name="_subject" value="【体験レッスン申込】ウェブサイトより">
+
+        <div class="field">
+          <label for="parentName">保護者さまのお名前 <span class="muted">（必須）</span></label>
+          <input id="parentName" name="保護者名" type="text" autocomplete="name" required placeholder="例）山田 花子" />
+        </div>
+
+        <div class="field">
+          <label for="childAge">お子さんの年齢 <span class="muted">（必須）</span></label>
+          <select id="childAge" name="お子さんの年齢" required>
+            <option value="">選択してください</option>
+            <option>3歳</option>
+            <option>4歳</option><option>5歳</option><option>6歳（未就学）</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="phone">電話番号 <span class="muted">（必須）</span></label>
+          <input id="phone" name="電話番号" type="tel" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" />
+          <div class="help">※確認のご連絡に使います（ハイフンありでもOK）</div>
+        </div>
+
+        <div class="field">
+          <label for="contact">ご希望の連絡方法 <span class="muted">（必須）</span></label>
+          <select id="contact" name="希望連絡方法" required>
+            <option value="">選択してください</option>
+            <option>電話が良い</option>
+            <option>SMSが良い</option>
+            <option>どちらでも</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">ご相談・気になっていること <span class="muted">（任意）</span></label>
+          <textarea id="message" name="ご相談内容" placeholder="例）家では元気ですが、園では声が小さく…、ご希望の体験コースなど"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">
+            ✨ 無料体験を申し込む
+          </button>
+          <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_apply">
+            📞 電話で申し込む
+          </a>
+        </div>
+
+        
+        <div id="okMsg" class="ok" role="status" aria-live="polite"></div>
+        <div id="errMsg" class="err" role="alert" aria-live="assertive"></div>
+      </form>
+
+      <div class="side-card" style="height:100%;">
+        <div class="inner">
+          <p class="side-title">申し込み前に、これだけ安心材料</p>
+
+          <div class="quote" style="margin-top:10px">
+            <p>
+              無料体験で見ていただきたいのは、<br/>
+              “上手にできるか”ではなく、<br/>
+              <strong>「うちの子にも、動き出す瞬間がある」</strong>という手応えです。
+            </p>
+            <small>気持ちが追いつく速さは、それぞれで大丈夫です。</small>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="mini">
+            <strong>電話でのご相談もOK：</strong><br/>
+            「いきなり申し込みはちょっと不安…」という方は、まずはお電話でも大丈夫です。
+          </p>
+
+          <div class="form-actions" style="margin-top:12px">
+            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side">
+              📞 まず電話で相談する
+            </a>
+            <a class="btn btn-ghost" href="#scenes" data-track="back_scenes">
+              👀 体験の様子を見る
+            </a>
+          </div>
+
+          <div class="divider"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="divider"></div>
+    <p>
+      教室名：ヤマハ音楽教室（㈱）トリイ　大津わにセンター<br/>
+      住所：滋賀県大津市和邇中浜３６６　今西ビル2F / 駐車場：あり<br/>
+      電話：0740-22-2063<br/>
+      <a href="https://www.toriimusic.co.jp/privacy_policy/" class="muted">プライバシーポリシー</a>
+    </p>
+    <p class="muted">© <span id="year"></span> Music School. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Sticky CTA -->
+<div class="sticky" role="region" aria-label="固定CTA">
+  <div class="container">
+    <div class="bar">
+      <div class="text">
+        <strong>無料体験レッスン</strong>
+        <span>ボタン1つで申し込みへ</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_sticky">📞 電話</a>
+        <a class="btn btn-primary" href="#apply" data-track="cta_sticky">✨ 無料体験を申し込む</a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<script>
+// ====== 設定（★FormspreeのURLをここに貼り付けてください） ======
+const SETTINGS = {
+  schoolName: "トリイ 音楽教室",
+  tel: "0740-22-2063",
+  formspreeEndpoint: "https://formspree.io/f/mnjnejae", // ここを差し替える
+  submitMode: "real" 
+};
+
+// ====== Utility ======
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+// 年号
+$("#year").textContent = new Date().getFullYear();
+
+// 電話番号差し替え
+function applyTel(tel){
+  $$('a[href^="tel:"]').forEach(a => a.setAttribute("href", "tel:" + tel.replaceAll("-", "")));
+}
+applyTel(SETTINGS.tel);
+
+// クリック計測
+window.dataLayer = window.dataLayer || [];
+function track(eventName, params={}){
+  try{
+    window.dataLayer.push({ event: eventName, ...params });
+  }catch(e){}
+}
+$$("[data-track]").forEach(el=>{
+  el.addEventListener("click", () => {
+    track("lp_click", { label: el.getAttribute("data-track") });
+  });
+});
+
+// ====== Form handling (Formspree Fetch) ======
+const form = $("#applyForm");
+const okMsg = $("#okMsg");
+const errMsg = $("#errMsg");
+const submitBtn = $("#submitBtn");
+
+function show(el, text){
+  el.textContent = text;
+  el.style.display = "block";
+}
+function hide(el){
+  el.style.display = "none";
+  el.textContent = "";
+}
+
+function normalizePhone(v){
+  return (v || "").toString().replace(/[^\d]/g, "");
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  hide(okMsg); hide(errMsg);
+
+  const parentName = $("#parentName").value.trim();
+  const childAge = $("#childAge").value.trim();
+  const phoneRaw = $("#phone").value.trim();
+  const phone = normalizePhone(phoneRaw);
+  const contact = $("#contact").value.trim();
+
+  // Minimal validation
+  if(!parentName){
+    show(errMsg, "保護者さまのお名前をご入力ください。");
+    $("#parentName").focus();
+    return;
+  }
+  if(!childAge){
+    show(errMsg, "お子さんの年齢を選択してください。");
+    $("#childAge").focus();
+    return;
+  }
+  if(!phone || phone.length < 10){
+    show(errMsg, "電話番号を正しくご入力ください。");
+    $("#phone").focus();
+    return;
+  }
+  if(!contact){
+    show(errMsg, "ご希望の連絡方法を選択してください。");
+    $("#contact").focus();
+    return;
+  }
+
+  // Tracking
+  track("lp_conversion", { type: "trial_apply", childAge, contact });
+
+  // ボタン無効化（二重送信防止）
+  submitBtn.disabled = true;
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = "送信中...";
+
+  try {
+    // Formspreeへの送信（FormDataを使用することでname属性を自動収集）
+    const formData = new FormData(form);
+    
+    const response = await fetch(SETTINGS.formspreeEndpoint, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      show(okMsg, "ありがとうございます。お申し込みを受け付けました。担当より折り返しご連絡いたします。");
+      form.reset();
+      submitBtn.style.display = "none"; // 送信後はボタンを隠す
+    } else {
+      const result = await response.json();
+      throw new Error(result.error || "Submit failed");
+    }
+
+  } catch (err) {
+    console.error(err);
+    show(errMsg, "エラーが発生しました。お手数ですが、お電話（" + SETTINGS.tel + "）にてお申し込みください。");
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalText;
+  }
+});
+
+// UX: CTAボタン押下でフォームにフォーカス
+$$('a[href="#apply"]').forEach(a=>{
+  a.addEventListener("click", () => {
+    setTimeout(()=> $("#parentName")?.focus(), 400);
+  });
+});
+</script>
+</body>
+</html>
