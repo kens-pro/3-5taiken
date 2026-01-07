@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="ja">
 <head>
@@ -34,7 +33,7 @@ body{
     radial-gradient(900px 500px at 10% 10%, rgba(42,127,116,.10), transparent 55%),
     linear-gradient(180deg, var(--bg), #fff 60%);
 }
-a{color:inherit; text-decoration: none;}
+a{color:inherit; text-decoration:none}
 .container{
   max-width:var(--max);
   margin:0 auto;
@@ -64,10 +63,10 @@ header{
   min-width: 180px;
 }
 .logo-img{
-  width: 44px;          /* ロゴの横幅（お好みで調整） */
-  height: 44px;         /* ロゴの高さ（お好みで調整） */
-  object-fit: contain;  /* 画像を歪ませずに表示 */
-  flex: 0 0 auto;       /* 画像が潰れないように固定 */
+  width:44px;
+  height:44px;
+  object-fit:contain;
+  flex:0 0 auto;
 }
 .brandname{line-height:1.1;}
 .brandname strong{display:block; font-size:14px; letter-spacing:.02em}
@@ -80,32 +79,33 @@ nav{
   color:var(--muted);
 }
 nav a{
-  text-decoration:none;
   padding:8px 10px;
-  border-radius: 12px;
+  border-radius:12px;
 }
 nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
 .header-cta{
-  display:flex; gap:10px; align-items:center;
+  display:flex;
+  gap:10px;
+  align-items:center;
 }
 
 /* Buttons */
 .btn{
   appearance:none;
   border:1px solid transparent;
-  border-radius: 14px;
+  border-radius:14px;
   padding:12px 14px;
-  font-weight:700;
+  font-weight:800;
   font-size:14px;
   cursor:pointer;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:10px;
-  text-decoration:none;
   transition: transform .08s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
   user-select:none;
-  min-height: 44px; /* タップしやすく */
+  min-height:44px;
+  white-space:nowrap;
 }
 .btn:active{transform: translateY(1px)}
 .btn-primary{
@@ -114,7 +114,7 @@ nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
   box-shadow: 0 14px 30px rgba(216,106,132,.30);
 }
 .btn-primary:hover{box-shadow: 0 18px 36px rgba(216,106,132,.36)}
-.btn-primary:disabled{ opacity: 0.7; cursor: not-allowed; transform: none; }
+.btn-primary:disabled{opacity:.7; cursor:not-allowed; transform:none;}
 .btn-ghost{
   background: rgba(255,255,255,.70);
   border-color: var(--line);
@@ -133,355 +133,345 @@ nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
   box-shadow: 0 14px 30px rgba(6,199,85,.22);
 }
 .btn-line:hover{box-shadow: 0 18px 36px rgba(6,199,85,.28)}
+
 .pill{
   display:inline-flex;
   align-items:center;
   gap:8px;
   padding:8px 12px;
-  border-radius: 999px;
+  border-radius:999px;
   background: rgba(216,106,132,.12);
-  color: #7b2f3f;
-  border: 1px solid rgba(216,106,132,.18);
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  white-space: nowrap;
+  color:#7b2f3f;
+  border:1px solid rgba(216,106,132,.18);
+  font-size:12.5px;
+  font-weight:800;
+  letter-spacing:.02em;
+  white-space:nowrap;
 }
 
 /* Hero */
-.hero{padding: 28px 0 10px;}
+.hero{padding:28px 0 10px;}
 .hero-grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
-  gap: 18px;
-  align-items: stretch;
+  gap:18px;
+  align-items:stretch;
 }
 .hero-card{
   background: rgba(255,255,255,.82);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius2);
   box-shadow: var(--shadow);
   overflow:hidden;
-  position:relative;
 }
-.hero-card .inner{padding: 22px}
+.hero-card .inner{padding:22px}
 .headline{
-  margin: 12px 0 10px;
+  margin:12px 0 10px;
   font-size: clamp(22px, 2.6vw, 34px);
-  letter-spacing: .01em;
-  line-height: 1.25;
+  letter-spacing:.01em;
+  line-height:1.25;
 }
 .sub{
-  margin: 0 0 16px;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 15px;
+  margin:0 0 16px;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:15px;
 }
 .hero-cta{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-top: 12px;
+  margin-top:12px;
 }
 .trust-row{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top: 16px;
-  color: var(--muted);
-  font-size: 12.5px;
+  margin-top:16px;
+  color:var(--muted);
+  font-size:12.5px;
 }
 .trust-item{
   display:flex; align-items:center; gap:8px;
-  padding: 10px 12px;
-  border-radius: 14px;
+  padding:10px 12px;
+  border-radius:14px;
   background: rgba(0,0,0,.03);
-  border: 1px solid rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.06);
 }
 .side{
   display:flex;
   flex-direction:column;
-  gap: 12px;
+  gap:12px;
 }
 .side-card{
   background: rgba(255,255,255,.86);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius2);
   box-shadow: 0 12px 26px rgba(0,0,0,.08);
   overflow:hidden;
 }
-.side-card .inner{padding: 18px}
+.side-card .inner{padding:18px}
 .side-title{
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: .02em;
-  margin: 0 0 10px;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.02em;
+  margin:0 0 10px;
 }
 
 /* Section */
-section{padding: 26px 0}
+section{padding:26px 0}
 .section-title{
-  margin: 0 0 10px;
-  font-size: 20px;
-  letter-spacing: .02em;
+  margin:0 0 10px;
+  font-size:20px;
+  letter-spacing:.02em;
 }
 .section-lead{
-  margin: 0 0 16px;
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 14.5px;
+  margin:0 0 16px;
+  color:var(--muted);
+  line-height:1.8;
+  font-size:14.5px;
 }
 .grid-3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap:12px;
 }
 .card{
   background: rgba(255,255,255,.86);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: 0 10px 22px rgba(0,0,0,.06);
-  padding: 16px;
-  min-height: 120px;
+  padding:16px;
+  min-height:120px;
 }
 .card h3{
-  margin: 0 0 8px;
-  font-size: 15px;
-  letter-spacing: .01em;
+  margin:0 0 8px;
+  font-size:15px;
+  letter-spacing:.01em;
 }
 .card p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 14px;
+  margin:0;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:14px;
 }
 .quote{
   background: linear-gradient(135deg, rgba(216,106,132,.08), rgba(42,127,116,.06));
-  border: 1px solid rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.06);
   border-radius: var(--radius2);
-  padding: 16px;
+  padding:16px;
 }
-.quote p{margin: 0; line-height: 1.8; color: var(--text)}
-.quote small{display:block; margin-top: 8px; color: var(--muted)}
+.quote p{margin:0; line-height:1.8; color:var(--text)}
+.quote small{display:block; margin-top:8px; color:var(--muted)}
 .list{
   display:grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
 }
 .li{
   display:flex;
-  gap: 12px;
+  gap:12px;
   align-items:flex-start;
-  padding: 14px;
+  padding:14px;
   border-radius: var(--radius);
   background: rgba(255,255,255,.86);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   box-shadow: 0 10px 22px rgba(0,0,0,.06);
 }
 .badge{
-  width: 34px; height: 34px;
-  border-radius: 14px;
+  width:34px; height:34px;
+  border-radius:14px;
   background: rgba(216,106,132,.18);
-  border: 1px solid rgba(216,106,132,.22);
+  border:1px solid rgba(216,106,132,.22);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight: 900;
-  color: #7b2f3f;
-  flex: 0 0 auto;
+  font-weight:900;
+  color:#7b2f3f;
+  flex:0 0 auto;
 }
-.li strong{display:block; margin: 2px 0 6px}
-.li span{display:block; color: var(--muted); line-height:1.75; font-size:14px}
+.li strong{display:block; margin:2px 0 6px}
+.li span{display:block; color:var(--muted); line-height:1.75; font-size:14px}
 
 /* Form */
 .form-wrap{
   display:grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap:12px;
   align-items:start;
 }
 form{
   background: rgba(255,255,255,.92);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius2);
   box-shadow: var(--shadow);
-  padding: 18px;
+  padding:18px;
 }
 .field{
   display:grid;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap:6px;
+  margin-bottom:12px;
 }
 label{
-  font-size: 13px;
-  font-weight: 800;
-  color: #333;
+  font-size:13px;
+  font-weight:900;
+  color:#333;
 }
 input, select, textarea{
-  width: 100%;
-  padding: 12px 12px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,.14);
-  background: #fff;
-  font-size: 15px;
-  outline: none;
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.14);
+  background:#fff;
+  font-size:15px;
+  outline:none;
 }
-textarea{min-height: 96px; resize: vertical}
+textarea{min-height:96px; resize:vertical}
 input:focus, select:focus, textarea:focus{
   border-color: rgba(216,106,132,.55);
   box-shadow: 0 0 0 4px rgba(216,106,132,.14);
 }
 .help{
-  font-size: 12.5px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-top: 4px;
+  font-size:12.5px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:4px;
 }
 .form-actions{
   display:flex;
-  gap: 10px;
+  gap:10px;
   flex-wrap:wrap;
-  margin-top: 8px;
+  margin-top:8px;
 }
 .note{
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-top: 10px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-top:10px;
 }
 .ok{
   display:none;
-  margin-top: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
   background: rgba(42,127,116,.10);
-  border: 1px solid rgba(42,127,116,.22);
-  color: #1f5f57;
-  font-weight: 800;
-  line-height: 1.6;
-  font-size: 13.5px;
-  text-align: center;
+  border:1px solid rgba(42,127,116,.22);
+  color:#1f5f57;
+  font-weight:900;
+  line-height:1.6;
+  font-size:13.5px;
+  text-align:center;
 }
 .err{
   display:none;
-  margin-top: 12px;
-  padding: 12px 14px;
-  border-radius: 14px;
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
   background: rgba(220, 60, 60, .08);
-  border: 1px solid rgba(220, 60, 60, .20);
-  color: #7d1f1f;
-  font-weight: 800;
-  line-height: 1.6;
-  font-size: 13.5px;
-  text-align: center;
+  border:1px solid rgba(220, 60, 60, .20);
+  color:#7d1f1f;
+  font-weight:900;
+  line-height:1.6;
+  font-size:13.5px;
+  text-align:center;
 }
 
 /* FAQ */
 details{
   background: rgba(255,255,255,.86);
-  border: 1px solid var(--line);
+  border:1px solid var(--line);
   border-radius: var(--radius);
-  padding: 12px 14px;
+  padding:12px 14px;
   box-shadow: 0 10px 22px rgba(0,0,0,.06);
 }
-details + details{margin-top: 10px}
+details + details{margin-top:10px}
 summary{
   cursor:pointer;
-  font-weight: 900;
-  font-size: 14px;
-  list-style: none;
+  font-weight:900;
+  font-size:14px;
+  list-style:none;
 }
 summary::-webkit-details-marker{display:none}
 details p{
-  margin: 10px 0 0;
-  color: var(--muted);
-  line-height: 1.75;
-  font-size: 14px;
+  margin:10px 0 0;
+  color:var(--muted);
+  line-height:1.75;
+  font-size:14px;
 }
 
 /* Footer + Sticky CTA */
 footer{
-  padding: 28px 0 120px; /* sticky分（PC用） */
-  color: var(--muted);
-  font-size: 12.5px;
-  line-height: 1.8;
+  padding:28px 0 120px; /* 下部追従CTAぶん */
+  color:var(--muted);
+  font-size:12.5px;
+  line-height:1.8;
 }
 .sticky{
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 60;
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:60;
   background: rgba(255,255,255,.86);
   backdrop-filter: blur(10px);
-  border-top: 1px solid var(--line);
+  border-top:1px solid var(--line);
 }
 .sticky .bar{
   display:flex;
-  gap: 10px;
+  gap:10px;
   align-items:center;
   justify-content:space-between;
-  padding: 10px 0;
+  padding:10px 0;
 }
 .sticky .text{
   display:none;
   flex-direction:column;
-  gap: 2px;
-  min-width: 160px;
+  gap:2px;
+  min-width:160px;
 }
-.sticky .text strong{font-size: 13px}
-.sticky .text span{font-size: 12px; color: var(--muted)}
+.sticky .text strong{font-size:13px}
+.sticky .text span{font-size:12px; color:var(--muted)}
 .sticky .actions{
   display:flex;
-  gap: 10px;
-  width: 100%;
-  flex-wrap: wrap;
+  gap:10px;
+  width:100%;
+  flex-wrap:wrap;
 }
 .sticky .actions a, .sticky .actions button{
-  flex: 1 1 0;
-  min-width: 0;
+  flex:1 1 0;
+  min-width:0;
 }
 
 /* Responsive */
 @media (min-width: 860px){
   nav{display:flex}
   .sticky .text{display:flex}
-  .sticky .actions{width: auto}
-  .sticky .actions a, .sticky .actions button{flex: 0 0 auto; min-width: 170px}
+  .sticky .actions{width:auto}
+  .sticky .actions a, .sticky .actions button{flex:0 0 auto; min-width:170px}
 }
 @media (max-width: 940px){
-  .hero-grid{grid-template-columns: 1fr}
-  .form-wrap{grid-template-columns: 1fr}
-  .grid-3{grid-template-columns: 1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .form-wrap{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
 }
 
-/* ★スマホでは追従バナーを非表示 + フッター余白を戻す */
+/* ★スマホで「ヘッダーの面積」を小さくする（下部追従CTAは残す） */
 @media (max-width: 859px){
-  .sticky{display:none !important;}
-  footer{padding-bottom:28px;}
+  /* 1) ヘッダー内の「リスト/ボタン群」を非表示（下部追従CTAに役割を寄せる） */
+  .header-cta{display:none !important;}
+
+  /* 2) ヘッダー自体をコンパクトに */
+  .topbar{padding:8px 0;}
+  .logo-img{width:36px; height:36px;}
+  .brandname strong{font-size:13px;}
+  .brandname span{font-size:11.5px;}
 }
 
 /* Small helpers */
-.muted{color: var(--muted)}
-.divider{
-  height:1px; background: var(--line);
-  margin: 18px 0;
-}
-.kicker{
-  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-}
-.mini{
-  font-size: 12.5px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);
-  border:0;
-}
+.muted{color:var(--muted)}
+.divider{height:1px; background:var(--line); margin:18px 0;}
+.kicker{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+.mini{font-size:12.5px; color:var(--muted); line-height:1.7;}
 </style>
 </head>
 
@@ -505,16 +495,11 @@ footer{
         <a href="#apply">申し込み</a>
       </nav>
 
+      <!-- PCでは表示 / スマホではCSSで非表示 -->
       <div class="header-cta">
-        <a class="btn btn-ghost" href="tel:0740-22-2063" data-track="tel_header" aria-label="電話で問い合わせ">
-          📞 電話
-        </a>
-        <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_header" aria-label="LINEで相談する">
-          💬 LINEで相談
-        </a>
-        <a class="btn btn-primary" href="#apply" data-track="cta_header" aria-label="無料体験を申し込む">
-          ✨ 無料体験を申し込む
-        </a>
+        <a class="btn btn-ghost" href="tel:0740-22-2063" data-track="tel_header" aria-label="電話で問い合わせ">📞 電話</a>
+        <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_header" aria-label="LINEで相談する">💬 LINEで相談</a>
+        <a class="btn btn-primary" href="#apply" data-track="cta_header" aria-label="無料体験を申し込む">✨ 無料体験を申し込む</a>
       </div>
     </div>
   </div>
@@ -542,18 +527,10 @@ footer{
             </p>
 
             <div class="hero-cta">
-              <a class="btn btn-primary" href="#apply" data-track="cta_hero">
-                ✨ 無料体験を申し込む
-              </a>
-              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_hero">
-                💬 LINEで相談する
-              </a>
-              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_hero">
-                📞 電話で相談する
-              </a>
-              <a class="btn btn-ghost" href="#scenes" data-track="read_more">
-                👀 体験で見られること
-              </a>
+              <a class="btn btn-primary" href="#apply" data-track="cta_hero">✨ 無料体験を申し込む</a>
+              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_hero">💬 LINEで相談する</a>
+              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_hero">📞 電話で相談する</a>
+              <a class="btn btn-ghost" href="#scenes" data-track="read_more">👀 体験で見られること</a>
             </div>
 
             <div class="trust-row" aria-label="安心ポイント">
@@ -569,26 +546,6 @@ footer{
                 周りに相談しても具体策が見つからず、「自分一人ではどうしたらいいんだろう」と感じること、ありますよね。<br/>
                 この無料体験は、そんなママのための“確かめる時間”でもあります。
               </p>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="quote" aria-label="LINE案内">
-              <p>
-                「まずは質問だけ…」も大丈夫です。<br/>
-                迷っている段階のまま、<strong>LINEで気軽にご相談</strong>ください。
-              </p>
-              <small>
-                ※返信は営業時間内に順次行います。お急ぎの方はお電話が確実です。
-              </small>
-              <div class="form-actions" style="margin-top:12px">
-                <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_hero_box">
-                  💬 LINEで相談する
-                </a>
-                <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_linebox">
-                  ✨ 申込フォームを見る
-                </a>
-              </div>
             </div>
 
           </div>
@@ -618,23 +575,11 @@ footer{
               <p class="side-title">対象と教室</p>
               <p class="mini">対象：2026年春 年少・年中・年長さん（未就学）</p>
               <p class="mini">場所：ヤマハ音楽教室　<br>㈱トリイ　大津わにセンター　<br>大津市和邇中浜366　今西ビル2F</p>
-
-              <div class="divider"></div>
-
-              <p class="mini"><strong>LINEで場所・日程の確認もOK：</strong></p>
-              <div class="form-actions" style="margin-top:10px">
-                <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_side_top">
-                  💬 LINEで聞く
-                </a>
-                <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side_top">
-                  📞 電話する
-                </a>
-              </div>
             </div>
           </div>
         </div>
 
-      </div><!-- /hero-grid -->
+      </div>
     </div>
   </div>
 
@@ -661,24 +606,6 @@ footer{
           <p>できる・できないより、「やってみたい」「ちょっとできた」を積み重ねることを優先します。</p>
         </div>
       </div>
-
-      <div class="divider"></div>
-
-      <div class="quote" aria-label="ABOUT内LINE案内">
-        <p>
-          「うちの場合はどうかな？」は、家庭ごとに違います。<br/>
-          <strong>LINEで状況だけ先に共有</strong>していただくのもOKです。
-        </p>
-        <div class="form-actions" style="margin-top:12px">
-          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_about">
-            💬 LINEで相談する
-          </a>
-          <a class="btn btn-primary" href="#apply" data-track="cta_about">
-            ✨ 体験を申し込む
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -696,9 +623,7 @@ footer{
           <div class="badge">1</div>
           <div>
             <strong>歌うのが恥ずかしかった子が…</strong>
-            <span>
-              隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。
-            </span>
+            <span>隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。</span>
           </div>
         </li>
 
@@ -706,10 +631,7 @@ footer{
           <div class="badge">2</div>
           <div>
             <strong>先生の前に行けなかった子が…</strong>
-            <span>
-              「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、
-              返すときに「ありがとう」が言える子も出てきます。
-            </span>
+            <span>「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、返すときに「ありがとう」が言える子も出てきます。</span>
           </div>
         </li>
 
@@ -717,10 +639,7 @@ footer{
           <div class="badge">3</div>
           <div>
             <strong>「タンタンタン♪」のリズムが…</strong>
-            <span>
-              「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。
-              （積極的なリズム体験）
-            </span>
+            <span>「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。（積極的なリズム体験）</span>
           </div>
         </li>
 
@@ -728,9 +647,7 @@ footer{
           <div class="badge">4</div>
           <div>
             <strong>先生のお話し中に…</strong>
-            <span>
-              ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。
-            </span>
+            <span>ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。</span>
           </div>
         </li>
       </ul>
@@ -745,24 +662,6 @@ footer{
         </p>
         <small>※変化の出方には個人差があります。体験は“合うかどうかを確かめる時間”としてご利用ください。</small>
       </div>
-
-      <div class="divider"></div>
-
-      <div class="quote" aria-label="SCENES内LINE案内">
-        <p>
-          体験日の相談・不安の整理は、<strong>LINEが一番ラク</strong>です。<br/>
-          「何から聞けばいいか分からない…」でもOK。短文で大丈夫です。
-        </p>
-        <div class="form-actions" style="margin-top:12px">
-          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_scenes">
-            💬 LINEで相談する
-          </a>
-          <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_scenes">
-            ✨ 申込フォームへ
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -770,40 +669,22 @@ footer{
   <section id="flow">
     <div class="container">
       <h2 class="section-title">無料体験レッスンの流れ</h2>
-      <p class="section-lead">実際の運用に合わせて自由に編集してください。初めての方が不安にならないよう、“見通し”を明確にするのがコツです。</p>
+      <p class="section-lead">初めての方が不安にならないよう、“見通し”を明確にしています。</p>
 
       <div class="grid-3">
         <div class="card">
           <h3>① 受付・ヒアリング</h3>
-          <p>お母さんの気になることをすべてお聞きし、お答えします。お子さんの普段の様子を簡単に伺います。</p>
+          <p>お母さんの気になることをお聞きし、お子さんの普段の様子を簡単に伺います。</p>
         </div>
         <div class="card">
           <h3>② 体験レッスン</h3>
-          <p>ヒアリングをもとに先生が音・リズム・歌・鍵盤に触れながら、無理なく参加できる内容で進めます。</p>
+          <p>音・リズム・歌・鍵盤に触れながら、無理なく参加できる内容で進めます。</p>
         </div>
         <div class="card">
           <h3>③ ふりかえり・相談</h3>
-          <p>その日の様子を一緒にふりかえり、すべての質問にお答えします。通い方や不安点を気軽にご相談ください。</p>
+          <p>その日の様子を一緒にふりかえり、通い方や不安点も気軽にご相談ください。</p>
         </div>
       </div>
-
-      <div class="divider"></div>
-
-      <div class="quote" aria-label="FLOW内LINE案内">
-        <p>
-          体験前に「これだけ聞きたい」を先に送ると、当日がスムーズです。<br/>
-          <strong>LINEで事前質問</strong>も受け付けています。
-        </p>
-        <div class="form-actions" style="margin-top:12px">
-          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_flow">
-            💬 LINEで事前に聞く
-          </a>
-          <a class="btn btn-primary" href="#apply" data-track="cta_flow">
-            ✨ 体験を申し込む
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -814,36 +695,18 @@ footer{
 
       <details>
         <summary>Q. 人見知りで、参加できるか心配です。</summary>
-        <p>人見知りは感性のアンテナが高い傾向があります。無理に前に出させることはせず、お子さんのペースを大切に進めます。</p>
+        <p>無理に前に出させることはせず、お子さんのペースを大切に進めます。</p>
       </details>
 
       <details>
         <summary>Q. 体験後、必ず入会しないといけませんか？</summary>
-        <p>いいえ。体験は「その子とご家族に合うかどうか」を確かめる時間です。ご家庭の状況に合わせてご検討ください。</p>
+        <p>いいえ。体験は「合うかどうか」を確かめる時間です。ご家庭の状況に合わせてご検討ください。</p>
       </details>
 
       <details>
         <summary>Q. 何歳から参加できますか？</summary>
-        <p>年少〜年長（未就学）のお子さんが対象です。グループレッスンと個人レッスンがあります。</p>
+        <p>年少〜年長（未就学）のお子さんが対象です。</p>
       </details>
-
-      <div class="divider"></div>
-
-      <div class="quote" aria-label="FAQ内LINE案内">
-        <p>
-          ここに無い質問は、LINEでどうぞ。<br/>
-          「人見知り」「園での様子」「家では元気」など、短く書くだけでOKです。
-        </p>
-        <div class="form-actions" style="margin-top:12px">
-          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_faq">
-            💬 LINEで質問する
-          </a>
-          <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_faq">
-            ✨ 申込フォームへ
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -852,7 +715,6 @@ footer{
     <div class="container">
       <h2 class="section-title">無料体験レッスン お申し込み</h2>
       <p class="section-lead">
-        お母さんはひとりじゃありません。<br/>
         「うちの子に合うかな？」の段階から、気軽にご相談ください。
       </p>
 
@@ -898,23 +760,13 @@ footer{
           </div>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">
-              ✨ 無料体験を申し込む
-            </button>
-            <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_apply">
-              💬 LINEで相談してから決める
-            </a>
-            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_apply">
-              📞 電話で申し込む
-            </a>
+            <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">✨ 無料体験を申し込む</button>
+            <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_apply">💬 LINEで相談してから決める</a>
+            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_apply">📞 電話で申し込む</a>
           </div>
 
           <div id="okMsg" class="ok" role="status" aria-live="polite"></div>
           <div id="errMsg" class="err" role="alert" aria-live="assertive"></div>
-
-          <p class="note">
-            ※フォーム送信がうまくいかない場合は、LINEまたはお電話でお申し込みください。
-          </p>
         </form>
 
         <div class="side-card" style="height:100%;">
@@ -938,31 +790,13 @@ footer{
             </p>
 
             <div class="form-actions" style="margin-top:12px">
-              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_side">
-                💬 まずLINEで相談する
-              </a>
-              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side">
-                📞 まず電話で相談する
-              </a>
-              <a class="btn btn-ghost" href="#scenes" data-track="back_scenes">
-                👀 体験の様子を見る
-              </a>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="quote" aria-label="LINE相談の一言例">
-              <p>
-                LINEの一言例：<br/>
-                「年中です。家では元気ですが園では静かで…体験の相談できますか？」
-              </p>
-              <small>※コピペでOKです。</small>
+              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_side">💬 まずLINEで相談する</a>
+              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side">📞 まず電話で相談する</a>
             </div>
 
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -979,7 +813,7 @@ footer{
     </div>
   </footer>
 
-  <!-- Sticky CTA（PCのみ表示：CSSでスマホは非表示） -->
+  <!-- 下部追従CTA：スマホでも表示（残す） -->
   <div class="sticky" role="region" aria-label="固定CTA">
     <div class="container">
       <div class="bar">
@@ -999,51 +833,48 @@ footer{
 </main>
 
 <script>
-// ====== 設定 ======
+/* ====== 設定 ====== */
 const SETTINGS = {
   schoolName: "トリイ 音楽教室",
   tel: "0740-22-2063",
   lineUrl: "https://lin.ee/EEMZjMTA",
-  formspreeEndpoint: "https://formspree.io/f/mnjnejae", // ここを差し替える
+  formspreeEndpoint: "https://formspree.io/f/mnjnejae",
   submitMode: "real"
 };
 
-// ====== Utility ======
+/* ====== Utility ====== */
 const $  = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-// 年号
+/* 年号 */
 $("#year").textContent = new Date().getFullYear();
 
-// 電話番号差し替え
+/* 電話番号差し替え */
 function applyTel(tel){
   const normalized = (tel || "").toString().replace(/[^\d]/g, "");
   $$('a[href^="tel:"]').forEach(a => a.setAttribute("href", "tel:" + normalized));
 }
 applyTel(SETTINGS.tel);
 
-// LINEリンク差し替え（必要ならここだけ変更で全ボタン反映）
+/* LINEリンク差し替え（必要ならここだけ変更で全ボタン反映） */
 function applyLine(url){
   if(!url) return;
   $$('a[href^="https://lin.ee/"]').forEach(a => a.setAttribute("href", url));
 }
 applyLine(SETTINGS.lineUrl);
 
-// クリック計測
+/* クリック計測 */
 window.dataLayer = window.dataLayer || [];
 function track(eventName, params={}){
-  try{
-    window.dataLayer.push({ event: eventName, ...params });
-  }catch(e){}
+  try{ window.dataLayer.push({ event: eventName, ...params }); }catch(e){}
 }
-
 $$("[data-track]").forEach(el=>{
   el.addEventListener("click", () => {
     track("lp_click", { label: el.getAttribute("data-track") });
   });
 });
 
-// ====== Form handling (Formspree Fetch) ======
+/* ====== Form handling (Formspree Fetch) ====== */
 const form = $("#applyForm");
 const okMsg = $("#okMsg");
 const errMsg = $("#errMsg");
@@ -1066,10 +897,10 @@ form.addEventListener("submit", async (e) => {
   hide(okMsg); hide(errMsg);
 
   const parentName = $("#parentName").value.trim();
-  const childAge = $("#childAge").value.trim();
-  const phoneRaw = $("#phone").value.trim();
-  const phone = normalizePhone(phoneRaw);
-  const contact = $("#contact").value.trim();
+  const childAge   = $("#childAge").value.trim();
+  const phoneRaw   = $("#phone").value.trim();
+  const phone      = normalizePhone(phoneRaw);
+  const contact    = $("#contact").value.trim();
 
   if(!parentName){
     show(errMsg, "保護者さまのお名前をご入力ください。");
@@ -1116,7 +947,7 @@ form.addEventListener("submit", async (e) => {
       try{ result = await response.json(); }catch(e){}
       throw new Error(result.error || "Submit failed");
     }
-  } catch (err) {
+  }catch(err){
     console.error(err);
     show(errMsg, "エラーが発生しました。お手数ですが、LINEまたはお電話（" + SETTINGS.tel + "）にてお申し込みください。");
     submitBtn.disabled = false;
@@ -1124,7 +955,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-// UX: CTAボタン押下でフォームにフォーカス
+/* UX: CTAボタン押下でフォームにフォーカス */
 $$('a[href="#apply"]').forEach(a=>{
   a.addEventListener("click", () => {
     setTimeout(()=> $("#parentName")?.focus(), 400);
@@ -1133,6 +964,3 @@ $$('a[href="#apply"]').forEach(a=>{
 </script>
 </body>
 </html>
-```
-
-結論：追従型バナー（下部固定CTA）は **幅859px以下（スマホ想定）で非表示** になるように修正しました。
