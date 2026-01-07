@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="ja">
 <head>
@@ -7,18 +8,19 @@
 <meta name="description" content="家では元気なのに外では自信が出にくい…そんな就学前のお子さんとママへ。無料体験レッスンで小さな一歩を一緒に見つけませんか？" />
 <style>
 :root{
---bg: #fff7f9;
---surface: #ffffff;
---text: #1c1c1c;
---muted: #5a5a5a;
---line: rgba(0,0,0,.10);
---brand: #d86a84;     /* くすみピンク */
---brand2:#f3b6c4;     /* さらに淡い */
---accent:#2a7f74;     /* 差し色（落ち着いた緑） */
---shadow: 0 16px 40px rgba(0,0,0,.10);
---radius: 18px;
---radius2: 26px;
---max: 1060px;
+  --bg: #fff7f9;
+  --surface: #ffffff;
+  --text: #1c1c1c;
+  --muted: #5a5a5a;
+  --line: rgba(0,0,0,.10);
+  --brand: #d86a84;     /* くすみピンク */
+  --brand2:#f3b6c4;     /* さらに淡い */
+  --accent:#2a7f74;     /* 差し色（落ち着いた緑） */
+  --lineGreen:#06C755;  /* LINE */
+  --shadow: 0 16px 40px rgba(0,0,0,.10);
+  --radius: 18px;
+  --radius2: 26px;
+  --max: 1060px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -32,7 +34,6 @@ body{
     radial-gradient(900px 500px at 10% 10%, rgba(42,127,116,.10), transparent 55%),
     linear-gradient(180deg, var(--bg), #fff 60%);
 }
-
 a{color:inherit; text-decoration: none;}
 .container{
   max-width:var(--max);
@@ -62,15 +63,13 @@ header{
   align-items:center;
   min-width: 180px;
 }
-.logo-img {
+.logo-img{
   width: 44px;          /* ロゴの横幅（お好みで調整） */
   height: 44px;         /* ロゴの高さ（お好みで調整） */
   object-fit: contain;  /* 画像を歪ませずに表示 */
   flex: 0 0 auto;       /* 画像が潰れないように固定 */
 }
-.brandname{
-  line-height:1.1;
-}
+.brandname{line-height:1.1;}
 .brandname strong{display:block; font-size:14px; letter-spacing:.02em}
 .brandname span{display:block; font-size:12px; color:var(--muted)}
 nav{
@@ -128,7 +127,12 @@ nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
   box-shadow: 0 14px 30px rgba(42,127,116,.22);
 }
 .btn-tel:hover{box-shadow: 0 18px 36px rgba(42,127,116,.28)}
-
+.btn-line{
+  background: linear-gradient(135deg, var(--lineGreen), rgba(6,199,85,.85));
+  color:#fff;
+  box-shadow: 0 14px 30px rgba(6,199,85,.22);
+}
+.btn-line:hover{box-shadow: 0 18px 36px rgba(6,199,85,.28)}
 .pill{
   display:inline-flex;
   align-items:center;
@@ -145,9 +149,7 @@ nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
 }
 
 /* Hero */
-.hero{
-  padding: 28px 0 10px;
-}
+.hero{padding: 28px 0 10px;}
 .hero-grid{
   display:grid;
   grid-template-columns: 1.15fr .85fr;
@@ -196,7 +198,6 @@ nav a:hover{background: rgba(216,106,132,.10); color:var(--text)}
   background: rgba(0,0,0,.03);
   border: 1px solid rgba(0,0,0,.06);
 }
-
 .side{
   display:flex;
   flex-direction:column;
@@ -230,7 +231,6 @@ section{padding: 26px 0}
   line-height: 1.8;
   font-size: 14.5px;
 }
-
 .grid-3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -255,7 +255,6 @@ section{padding: 26px 0}
   line-height: 1.75;
   font-size: 14px;
 }
-
 .quote{
   background: linear-gradient(135deg, rgba(216,106,132,.08), rgba(42,127,116,.06));
   border: 1px solid rgba(0,0,0,.06);
@@ -264,7 +263,6 @@ section{padding: 26px 0}
 }
 .quote p{margin: 0; line-height: 1.8; color: var(--text)}
 .quote small{display:block; margin-top: 8px; color: var(--muted)}
-
 .list{
   display:grid;
   gap: 10px;
@@ -405,12 +403,11 @@ details p{
 
 /* Footer + Sticky CTA */
 footer{
-  padding: 28px 0 100px; /* sticky分 */
+  padding: 28px 0 120px; /* sticky分 */
   color: var(--muted);
   font-size: 12.5px;
   line-height: 1.8;
 }
-
 .sticky{
   position: fixed;
   left: 0; right: 0; bottom: 0;
@@ -438,6 +435,7 @@ footer{
   display:flex;
   gap: 10px;
   width: 100%;
+  flex-wrap: wrap; /* 3ボタンでも崩れにくく */
 }
 .sticky .actions a, .sticky .actions button{
   flex: 1 1 0;
@@ -449,7 +447,7 @@ footer{
   nav{display:flex}
   .sticky .text{display:flex}
   .sticky .actions{width: auto}
-  .sticky .actions a, .sticky .actions button{flex: 0 0 auto; min-width: 180px}
+  .sticky .actions a, .sticky .actions button{flex: 0 0 auto; min-width: 170px}
 }
 @media (max-width: 940px){
   .hero-grid{grid-template-columns: 1fr}
@@ -480,393 +478,533 @@ footer{
 }
 </style>
 </head>
+
 <body>
 <header>
-<div class="container">
-<div class="topbar">
-<div class="logo" aria-label="教室ロゴ">
-<img src="images/favicon.png" alt="教室ロゴ" class="logo-img">
-<div class="brandname">
-<strong>就学前のお子さん向け 音楽教室</strong>
-<span>無料体験レッスン 受付中</span>
-</div>
-</div>
-    <nav aria-label="ページ内メニュー">
-      <a href="#about">どんな教室？</a>
-      <a href="#scenes">体験で見られること</a>
-      <a href="#flow">体験の流れ</a>
-      <a href="#faq">よくある質問</a>
-      <a href="#apply">申し込み</a>
-    </nav>
+  <div class="container">
+    <div class="topbar">
+      <div class="logo" aria-label="教室ロゴ">
+        <img src="images/favicon.png" alt="教室ロゴ" class="logo-img">
+        <div class="brandname">
+          <strong>就学前のお子さん向け 音楽教室</strong>
+          <span>無料体験レッスン 受付中</span>
+        </div>
+      </div>
 
-    <div class="header-cta">
-      <a class="btn btn-ghost" href="tel:0740-22-2063" data-track="tel_header" aria-label="電話で問い合わせ">
-        📞 電話
-      </a>
-      <a class="btn btn-primary" href="#apply" data-track="cta_header" aria-label="無料体験を申し込む">
-        ✨ 無料体験を申し込む
-      </a>
+      <nav aria-label="ページ内メニュー">
+        <a href="#about">どんな教室？</a>
+        <a href="#scenes">体験で見られること</a>
+        <a href="#flow">体験の流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#apply">申し込み</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="tel:0740-22-2063" data-track="tel_header" aria-label="電話で問い合わせ">
+          📞 電話
+        </a>
+        <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_header" aria-label="LINEで相談する">
+          💬 LINEで相談
+        </a>
+        <a class="btn btn-primary" href="#apply" data-track="cta_header" aria-label="無料体験を申し込む">
+          ✨ 無料体験を申し込む
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </header>
+
 <main>
-<!-- HERO -->
-<div class="hero">
-<div class="container">
-<div class="hero-grid">
-<div class="hero-card">
-<div class="inner">
-<div class="kicker">
-<span class="pill">無料体験レッスン</span>
-<span class="pill" style="background:rgba(42,127,116,.10);border-color:rgba(42,127,116,.18);color:#1f5f57;">就学前（未就学）</span>
-<span class="pill" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);color:#333;">ママ向けの安心設計</span>
-</div>
-          <h1 class="headline">🌟 家でのお子さんと外でのお子さん<br/>そのギャップに悩むママへ</h1>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="inner">
+            <div class="kicker">
+              <span class="pill">無料体験レッスン</span>
+              <span class="pill" style="background:rgba(42,127,116,.10);border-color:rgba(42,127,116,.18);color:#1f5f57;">就学前（未就学）</span>
+              <span class="pill" style="background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.08);color:#333;">ママ向けの安心設計</span>
+            </div>
 
-          <p class="sub">
-            お家では元気いっぱいなのに、外ではなかなか自信が持てない…。
-            「どうサポートしたらいいのかな？」と悩む気持ち、ひとりで抱えなくて大丈夫です。<br/>
-            無料体験レッスンで、お子さんの<strong>“小さな一歩”</strong>が見つかる瞬間を一緒に確かめてみませんか？
-          </p>
+            <h1 class="headline">🌟 家でのお子さんと外でのお子さん<br/>そのギャップに悩むママへ</h1>
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#apply" data-track="cta_hero">
-              ✨ 無料体験を申し込む
-            </a>
-            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_hero">
-              📞 電話で相談する
-            </a>
-            <a class="btn btn-ghost" href="#scenes" data-track="read_more">
-              👀 体験で見られること
-            </a>
-          </div>
-
-          <div class="trust-row" aria-label="安心ポイント">
-            <div class="trust-item">✅ はじめてでもOK</div>
-            <div class="trust-item">✅ ママ同伴OK</div>
-            <div class="trust-item">✅ 無理な勧誘一切なし</div>
-          </div>
-
-          <div class="divider"></div>
-
-          <div class="quote" aria-label="共感メッセージ">
-            <p>
-              周りに相談しても具体策が見つからず、「自分一人ではどうしたらいいんだろう」と感じること、ありますよね。<br/>
-              この無料体験は、そんなママのための“確かめる時間”でもあります。
+            <p class="sub">
+              お家では元気いっぱいなのに、外ではなかなか自信が持てない…。
+              「どうサポートしたらいいのかな？」と悩む気持ち、ひとりで抱えなくて大丈夫です。<br/>
+              無料体験レッスンで、お子さんの<strong>“小さな一歩”</strong>が見つかる瞬間を一緒に確かめてみませんか？
             </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="side">
-        <div class="side-card">
-          <div class="inner">
-            <p class="side-title">今日、ここがゴールです</p>
-            <ul class="list" style="margin:0; padding:0;">
-              <li class="mini">・この教室がご自身とお子様にピッタリか判断できる。</li>
-              <li class="mini">・申込、相談方法が簡単にわかる。</li>
-              <li class="mini">・習い事を考えるキッカケが増える</li>
-            </ul>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#apply" data-track="cta_hero">
+                ✨ 無料体験を申し込む
+              </a>
+              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_hero">
+                💬 LINEで相談する
+              </a>
+              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_hero">
+                📞 電話で相談する
+              </a>
+              <a class="btn btn-ghost" href="#scenes" data-track="read_more">
+                👀 体験で見られること
+              </a>
+            </div>
+
+            <div class="trust-row" aria-label="安心ポイント">
+              <div class="trust-item">✅ はじめてでもOK</div>
+              <div class="trust-item">✅ ママ同伴OK</div>
+              <div class="trust-item">✅ 無理な勧誘一切なし</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote" aria-label="共感メッセージ">
+              <p>
+                周りに相談しても具体策が見つからず、「自分一人ではどうしたらいいんだろう」と感じること、ありますよね。<br/>
+                この無料体験は、そんなママのための“確かめる時間”でもあります。
+              </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote" aria-label="LINE案内">
+              <p>
+                「まずは質問だけ…」も大丈夫です。<br/>
+                迷っている段階のまま、<strong>LINEで気軽にご相談</strong>ください。
+              </p>
+              <small>
+                ※返信は営業時間内に順次行います。お急ぎの方はお電話が確実です。
+              </small>
+              <div class="form-actions" style="margin-top:12px">
+                <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_hero_box">
+                  💬 LINEで相談する
+                </a>
+                <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_linebox">
+                  ✨ 申込フォームを見る
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="side-card">
-          <div class="inner">
-            <p class="side-title">持ち物はこれだけ</p>
-            <p class="mini">・動きやすい服装　・筆記用具・（できれば）上靴</p>
+        <div class="side">
+          <div class="side-card">
+            <div class="inner">
+              <p class="side-title">今日、ここがゴールです</p>
+              <ul class="list" style="margin:0; padding:0;">
+                <li class="mini">・この教室がご自身とお子様にピッタリか判断できる。</li>
+                <li class="mini">・申込、相談方法が簡単にわかる。</li>
+                <li class="mini">・習い事を考えるキッカケが増える</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <div class="inner">
+              <p class="side-title">持ち物はこれだけ</p>
+              <p class="mini">・動きやすい服装　・筆記用具・（できれば）上靴</p>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <div class="inner">
+              <p class="side-title">対象と教室</p>
+              <p class="mini">対象：2026年春 年少・年中・年長さん（未就学）</p>
+              <p class="mini">場所：ヤマハ音楽教室　<br>㈱トリイ　大津わにセンター　<br>大津市和邇中浜366　今西ビル2F</p>
+
+              <div class="divider"></div>
+
+              <p class="mini"><strong>LINEで場所・日程の確認もOK：</strong></p>
+              <div class="form-actions" style="margin-top:10px">
+                <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_side_top">
+                  💬 LINEで聞く
+                </a>
+                <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side_top">
+                  📞 電話する
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="side-card">
-          <div class="inner">
-            <p class="side-title">対象と教室</p>
-            <p class="mini">対象：2026年春 年少・年中・年長さん（未就学）</p>
-            <p class="mini">場所：ヤマハ音楽教室　<br>㈱トリイ　大津わにセンター　<br>大津市和邇中浜366　今西ビル2F</p>
-          </div>
-        </div>
-      </div>
+      </div><!-- /hero-grid -->
     </div>
   </div>
-</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">トリイの音楽教室は、こんな場所です</h2>
-    <p class="section-lead">
-      ママの「どうしたらいいんだろう」を、いきなり正解に導く場所ではなく、<br/>
-      まずは一緒に状況を受け止めて、<strong>お子さんの“できた”の芽</strong>を丁寧に見つけていく教室です。
-    </p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>🌷 ママの気持ちに寄り添う親子同伴型</h3>
-        <p>「相談しても具体策がない…」という不安に、体験の場で“実際の様子”から一緒に確認していきます。</p>
-      </div>
-      <div class="card">
-        <h3>🎵 年齢に応じた独自カリキュラム</h3>
-        <p>見て・真似て・少しやってみる。子どもが自分のペースで踏み出しやすい声かけと流れを大切にしています。</p>
-      </div>
-      <div class="card">
-        <h3>🫶 無理に急がせない成功体験</h3>
-        <p>できる・できないより、「やってみたい」「ちょっとできた」を積み重ねることを優先します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SCENES -->
-<section id="scenes">
-  <div class="container">
-    <h2 class="section-title">無料体験で見られる「小さな一歩」</h2>
-    <p class="section-lead">
-      体験レッスンでは、さまざまなお子さんがそれぞれのペースで小さな一歩を踏み出していきます。<br/>
-      ここは“上手にできるか”より、“動き出す瞬間”を見つけるところです。
-    </p>
-
-    <ul class="list" aria-label="体験で見られる場面">
-      <li class="li">
-        <div class="badge">1</div>
-        <div>
-          <strong>歌うのが恥ずかしかった子が…</strong>
-          <span>
-            隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。
-          </span>
-        </div>
-      </li>
-
-      <li class="li">
-        <div class="badge">2</div>
-        <div>
-          <strong>先生の前に行けなかった子が…</strong>
-          <span>
-            「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、
-            返すときに「ありがとう」が言える子も出てきます。
-          </span>
-        </div>
-      </li>
-
-      <li class="li">
-        <div class="badge">3</div>
-        <div>
-          <strong>「タンタンタン♪」のリズムが…</strong>
-          <span>
-            「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。
-            （積極的なリズム体験）
-          </span>
-        </div>
-      </li>
-
-      <li class="li">
-        <div class="badge">4</div>
-        <div>
-          <strong>先生のお話し中に…</strong>
-          <span>
-            ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。
-          </span>
-        </div>
-      </li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <div class="quote" aria-label="体験後のイメージ">
-      <p>
-        レッスンが終わった後、<br/>
-        「楽しかった！」と少し自信を持った表情でお母さんに駆け寄ってくるわが子を見て、<br/>
-        「この子、ちょっと変わったかも」と感じることがあるかもしれません。
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">トリイの音楽教室は、こんな場所です</h2>
+      <p class="section-lead">
+        ママの「どうしたらいいんだろう」を、いきなり正解に導く場所ではなく、<br/>
+        まずは一緒に状況を受け止めて、<strong>お子さんの“できた”の芽</strong>を丁寧に見つけていく教室です。
       </p>
-      <small>※変化の出方には個人差があります。体験は“合うかどうかを確かめる時間”としてご利用ください。</small>
-    </div>
-  </div>
-</section>
 
-<!-- FLOW -->
-<section id="flow">
-  <div class="container">
-    <h2 class="section-title">無料体験レッスンの流れ</h2>
-    <p class="section-lead">実際の運用に合わせて自由に編集してください。初めての方が不安にならないよう、“見通し”を明確にするのがコツです。</p>
-
-    <div class="grid-3">
-      <div class="card">
-        <h3>① 受付・ヒアリング</h3>
-        <p>お母さんの気になることをすべてお聞きし、お答えします。お子さんの普段の様子を簡単に伺います。</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>🌷 ママの気持ちに寄り添う親子同伴型</h3>
+          <p>「相談しても具体策がない…」という不安に、体験の場で“実際の様子”から一緒に確認していきます。</p>
+        </div>
+        <div class="card">
+          <h3>🎵 年齢に応じた独自カリキュラム</h3>
+          <p>見て・真似て・少しやってみる。子どもが自分のペースで踏み出しやすい声かけと流れを大切にしています。</p>
+        </div>
+        <div class="card">
+          <h3>🫶 無理に急がせない成功体験</h3>
+          <p>できる・できないより、「やってみたい」「ちょっとできた」を積み重ねることを優先します。</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>② 体験レッスン</h3>
-        <p>ヒアリングをもとに先生が音・リズム・歌・鍵盤に触れながら、無理なく参加できる内容で進めます。</p>
-      </div>
-      <div class="card">
-        <h3>③ ふりかえり・相談</h3>
-        <p>その日の様子を一緒にふりかえり、すべての質問にお答えします。通い方や不安点を気軽にご相談ください。</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <h2 class="section-title">よくある質問</h2>
-   
-    <details>
-      <summary>Q. 人見知りで、参加できるか心配です。</summary>
-      <p>人見知りは感性のアンテナが高い傾向があります。無理に前に出させることはせず、お子さんのペースを大切に進めます。</p>
-    </details>
+      <div class="divider"></div>
 
-    <details>
-      <summary>Q. 体験後、必ず入会しないといけませんか？</summary>
-      <p>いいえ。体験は「その子とご家族に合うかどうか」を確かめる時間です。ご家庭の状況に合わせてご検討ください。</p>
-    </details>
-
-    <details>
-      <summary>Q. 何歳から参加できますか？</summary>
-      <p>年少〜年長（未就学）のお子さんが対象です。グループレッスンと個人レッスンがあります。</p>
-    </details>
-  </div>
-</section>
-
-<!-- APPLY -->
-<section id="apply">
-  <div class="container">
-    <h2 class="section-title">無料体験レッスン お申し込み</h2>
-    <p class="section-lead">
-      お母さんはひとりじゃありません。<br/>
-      「うちの子に合うかな？」の段階から、気軽にご相談ください。
-    </p>
-
-    <div class="form-wrap">
-      <form id="applyForm" novalidate>
-        <!-- Formspree 制御用の隠しフィールド -->
-        <input type="hidden" name="_subject" value="【体験レッスン申込】ウェブサイトより">
-
-        <div class="field">
-          <label for="parentName">保護者さまのお名前 <span class="muted">（必須）</span></label>
-          <input id="parentName" name="保護者名" type="text" autocomplete="name" required placeholder="例）山田 花子" />
-        </div>
-
-        <div class="field">
-          <label for="childAge">お子さんの年齢 <span class="muted">（必須）</span></label>
-          <select id="childAge" name="お子さんの年齢" required>
-            <option value="">選択してください</option>
-            <option>3歳</option>
-            <option>4歳</option><option>5歳</option><option>6歳（未就学）</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="phone">電話番号 <span class="muted">（必須）</span></label>
-          <input id="phone" name="電話番号" type="tel" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" />
-          <div class="help">※確認のご連絡に使います（ハイフンありでもOK）</div>
-        </div>
-
-        <div class="field">
-          <label for="contact">ご希望の連絡方法 <span class="muted">（必須）</span></label>
-          <select id="contact" name="希望連絡方法" required>
-            <option value="">選択してください</option>
-            <option>電話が良い</option>
-            <option>SMSが良い</option>
-            <option>どちらでも</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="message">ご相談・気になっていること <span class="muted">（任意）</span></label>
-          <textarea id="message" name="ご相談内容" placeholder="例）家では元気ですが、園では声が小さく…、ご希望の体験コースなど"></textarea>
-        </div>
-
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">
-            ✨ 無料体験を申し込む
-          </button>
-          <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_apply">
-            📞 電話で申し込む
+      <div class="quote" aria-label="ABOUT内LINE案内">
+        <p>
+          「うちの場合はどうかな？」は、家庭ごとに違います。<br/>
+          <strong>LINEで状況だけ先に共有</strong>していただくのもOKです。
+        </p>
+        <div class="form-actions" style="margin-top:12px">
+          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_about">
+            💬 LINEで相談する
+          </a>
+          <a class="btn btn-primary" href="#apply" data-track="cta_about">
+            ✨ 体験を申し込む
           </a>
         </div>
+      </div>
 
-        
-        <div id="okMsg" class="ok" role="status" aria-live="polite"></div>
-        <div id="errMsg" class="err" role="alert" aria-live="assertive"></div>
-      </form>
+    </div>
+  </section>
 
-      <div class="side-card" style="height:100%;">
-        <div class="inner">
-          <p class="side-title">申し込み前に、これだけ安心材料</p>
+  <!-- SCENES -->
+  <section id="scenes">
+    <div class="container">
+      <h2 class="section-title">無料体験で見られる「小さな一歩」</h2>
+      <p class="section-lead">
+        体験レッスンでは、さまざまなお子さんがそれぞれのペースで小さな一歩を踏み出していきます。<br/>
+        ここは“上手にできるか”より、“動き出す瞬間”を見つけるところです。
+      </p>
 
-          <div class="quote" style="margin-top:10px">
-            <p>
-              無料体験で見ていただきたいのは、<br/>
-              “上手にできるか”ではなく、<br/>
-              <strong>「うちの子にも、動き出す瞬間がある」</strong>という手応えです。
-            </p>
-            <small>気持ちが追いつく速さは、それぞれで大丈夫です。</small>
+      <ul class="list" aria-label="体験で見られる場面">
+        <li class="li">
+          <div class="badge">1</div>
+          <div>
+            <strong>歌うのが恥ずかしかった子が…</strong>
+            <span>
+              隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。
+            </span>
+          </div>
+        </li>
+
+        <li class="li">
+          <div class="badge">2</div>
+          <div>
+            <strong>先生の前に行けなかった子が…</strong>
+            <span>
+              「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、
+              返すときに「ありがとう」が言える子も出てきます。
+            </span>
+          </div>
+        </li>
+
+        <li class="li">
+          <div class="badge">3</div>
+          <div>
+            <strong>「タンタンタン♪」のリズムが…</strong>
+            <span>
+              「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。
+              （積極的なリズム体験）
+            </span>
+          </div>
+        </li>
+
+        <li class="li">
+          <div class="badge">4</div>
+          <div>
+            <strong>先生のお話し中に…</strong>
+            <span>
+              ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <div class="quote" aria-label="体験後のイメージ">
+        <p>
+          レッスンが終わった後、<br/>
+          「楽しかった！」と少し自信を持った表情でお母さんに駆け寄ってくるわが子を見て、<br/>
+          「この子、ちょっと変わったかも」と感じることがあるかもしれません。
+        </p>
+        <small>※変化の出方には個人差があります。体験は“合うかどうかを確かめる時間”としてご利用ください。</small>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="quote" aria-label="SCENES内LINE案内">
+        <p>
+          体験日の相談・不安の整理は、<strong>LINEが一番ラク</strong>です。<br/>
+          「何から聞けばいいか分からない…」でもOK。短文で大丈夫です。
+        </p>
+        <div class="form-actions" style="margin-top:12px">
+          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_scenes">
+            💬 LINEで相談する
+          </a>
+          <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_scenes">
+            ✨ 申込フォームへ
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section id="flow">
+    <div class="container">
+      <h2 class="section-title">無料体験レッスンの流れ</h2>
+      <p class="section-lead">実際の運用に合わせて自由に編集してください。初めての方が不安にならないよう、“見通し”を明確にするのがコツです。</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>① 受付・ヒアリング</h3>
+          <p>お母さんの気になることをすべてお聞きし、お答えします。お子さんの普段の様子を簡単に伺います。</p>
+        </div>
+        <div class="card">
+          <h3>② 体験レッスン</h3>
+          <p>ヒアリングをもとに先生が音・リズム・歌・鍵盤に触れながら、無理なく参加できる内容で進めます。</p>
+        </div>
+        <div class="card">
+          <h3>③ ふりかえり・相談</h3>
+          <p>その日の様子を一緒にふりかえり、すべての質問にお答えします。通い方や不安点を気軽にご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="quote" aria-label="FLOW内LINE案内">
+        <p>
+          体験前に「これだけ聞きたい」を先に送ると、当日がスムーズです。<br/>
+          <strong>LINEで事前質問</strong>も受け付けています。
+        </p>
+        <div class="form-actions" style="margin-top:12px">
+          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_flow">
+            💬 LINEで事前に聞く
+          </a>
+          <a class="btn btn-primary" href="#apply" data-track="cta_flow">
+            ✨ 体験を申し込む
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">よくある質問</h2>
+
+      <details>
+        <summary>Q. 人見知りで、参加できるか心配です。</summary>
+        <p>人見知りは感性のアンテナが高い傾向があります。無理に前に出させることはせず、お子さんのペースを大切に進めます。</p>
+      </details>
+
+      <details>
+        <summary>Q. 体験後、必ず入会しないといけませんか？</summary>
+        <p>いいえ。体験は「その子とご家族に合うかどうか」を確かめる時間です。ご家庭の状況に合わせてご検討ください。</p>
+      </details>
+
+      <details>
+        <summary>Q. 何歳から参加できますか？</summary>
+        <p>年少〜年長（未就学）のお子さんが対象です。グループレッスンと個人レッスンがあります。</p>
+      </details>
+
+      <div class="divider"></div>
+
+      <div class="quote" aria-label="FAQ内LINE案内">
+        <p>
+          ここに無い質問は、LINEでどうぞ。<br/>
+          「人見知り」「園での様子」「家では元気」など、短く書くだけでOKです。
+        </p>
+        <div class="form-actions" style="margin-top:12px">
+          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_faq">
+            💬 LINEで質問する
+          </a>
+          <a class="btn btn-ghost" href="#apply" data-track="jump_apply_from_faq">
+            ✨ 申込フォームへ
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <div class="container">
+      <h2 class="section-title">無料体験レッスン お申し込み</h2>
+      <p class="section-lead">
+        お母さんはひとりじゃありません。<br/>
+        「うちの子に合うかな？」の段階から、気軽にご相談ください。
+      </p>
+
+      <div class="form-wrap">
+        <form id="applyForm" novalidate>
+          <!-- Formspree 制御用の隠しフィールド -->
+          <input type="hidden" name="_subject" value="【体験レッスン申込】ウェブサイトより">
+
+          <div class="field">
+            <label for="parentName">保護者さまのお名前 <span class="muted">（必須）</span></label>
+            <input id="parentName" name="保護者名" type="text" autocomplete="name" required placeholder="例）山田 花子" />
           </div>
 
-          <div class="divider"></div>
+          <div class="field">
+            <label for="childAge">お子さんの年齢 <span class="muted">（必須）</span></label>
+            <select id="childAge" name="お子さんの年齢" required>
+              <option value="">選択してください</option>
+              <option>3歳</option>
+              <option>4歳</option>
+              <option>5歳</option>
+              <option>6歳（未就学）</option>
+            </select>
+          </div>
 
-          <p class="mini">
-            <strong>電話でのご相談もOK：</strong><br/>
-            「いきなり申し込みはちょっと不安…」という方は、まずはお電話でも大丈夫です。
+          <div class="field">
+            <label for="phone">電話番号 <span class="muted">（必須）</span></label>
+            <input id="phone" name="電話番号" type="tel" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" />
+            <div class="help">※確認のご連絡に使います（ハイフンありでもOK）</div>
+          </div>
+
+          <div class="field">
+            <label for="contact">ご希望の連絡方法 <span class="muted">（必須）</span></label>
+            <select id="contact" name="希望連絡方法" required>
+              <option value="">選択してください</option>
+              <option>電話が良い</option>
+              <option>SMSが良い</option>
+              <option>どちらでも</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">ご相談・気になっていること <span class="muted">（任意）</span></label>
+            <textarea id="message" name="ご相談内容" placeholder="例）家では元気ですが、園では声が小さく…、ご希望の体験コースなど"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">
+              ✨ 無料体験を申し込む
+            </button>
+            <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_apply">
+              💬 LINEで相談してから決める
+            </a>
+            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_apply">
+              📞 電話で申し込む
+            </a>
+          </div>
+
+          <div id="okMsg" class="ok" role="status" aria-live="polite"></div>
+          <div id="errMsg" class="err" role="alert" aria-live="assertive"></div>
+
+          <p class="note">
+            ※フォーム送信がうまくいかない場合は、LINEまたはお電話でお申し込みください。
           </p>
+        </form>
 
-          <div class="form-actions" style="margin-top:12px">
-            <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side">
-              📞 まず電話で相談する
-            </a>
-            <a class="btn btn-ghost" href="#scenes" data-track="back_scenes">
-              👀 体験の様子を見る
-            </a>
+        <div class="side-card" style="height:100%;">
+          <div class="inner">
+            <p class="side-title">申し込み前に、これだけ安心材料</p>
+
+            <div class="quote" style="margin-top:10px">
+              <p>
+                無料体験で見ていただきたいのは、<br/>
+                “上手にできるか”ではなく、<br/>
+                <strong>「うちの子にも、動き出す瞬間がある」</strong>という手応えです。
+              </p>
+              <small>気持ちが追いつく速さは、それぞれで大丈夫です。</small>
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="mini">
+              <strong>電話でのご相談もOK：</strong><br/>
+              「いきなり申し込みはちょっと不安…」という方は、まずはお電話でも大丈夫です。
+            </p>
+
+            <div class="form-actions" style="margin-top:12px">
+              <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_side">
+                💬 まずLINEで相談する
+              </a>
+              <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_side">
+                📞 まず電話で相談する
+              </a>
+              <a class="btn btn-ghost" href="#scenes" data-track="back_scenes">
+                👀 体験の様子を見る
+              </a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote" aria-label="LINE相談の一言例">
+              <p>
+                LINEの一言例：<br/>
+                「年中です。家では元気ですが園では静かで…体験の相談できますか？」
+              </p>
+              <small>※コピペでOKです。</small>
+            </div>
+
           </div>
+        </div>
+      </div>
 
-          <div class="divider"></div>
+    </div>
+  </section>
 
+  <footer>
+    <div class="container">
+      <div class="divider"></div>
+      <p>
+        教室名：ヤマハ音楽教室（㈱）トリイ　大津わにセンター<br/>
+        住所：滋賀県大津市和邇中浜３６６　今西ビル2F / 駐車場：あり<br/>
+        電話：0740-22-2063<br/>
+        <a href="https://www.toriimusic.co.jp/privacy_policy/" class="muted">プライバシーポリシー</a>
+      </p>
+      <p class="muted">© <span id="year"></span> Music School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA -->
+  <div class="sticky" role="region" aria-label="固定CTA">
+    <div class="container">
+      <div class="bar">
+        <div class="text">
+          <strong>無料体験レッスン</strong>
+          <span>相談→申込までスムーズに</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-line" href="https://lin.ee/EEMZjMTA" target="_blank" rel="noopener" data-track="line_sticky">💬 LINE</a>
+          <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_sticky">📞 電話</a>
+          <a class="btn btn-primary" href="#apply" data-track="cta_sticky">✨ 申込フォーム</a>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="divider"></div>
-    <p>
-      教室名：ヤマハ音楽教室（㈱）トリイ　大津わにセンター<br/>
-      住所：滋賀県大津市和邇中浜３６６　今西ビル2F / 駐車場：あり<br/>
-      電話：0740-22-2063<br/>
-      <a href="https://www.toriimusic.co.jp/privacy_policy/" class="muted">プライバシーポリシー</a>
-    </p>
-    <p class="muted">© <span id="year"></span> Music School. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- Sticky CTA -->
-<div class="sticky" role="region" aria-label="固定CTA">
-  <div class="container">
-    <div class="bar">
-      <div class="text">
-        <strong>無料体験レッスン</strong>
-        <span>ボタン1つで申し込みへ</span>
-      </div>
-      <div class="actions">
-        <a class="btn btn-tel" href="tel:0740-22-2063" data-track="tel_sticky">📞 電話</a>
-        <a class="btn btn-primary" href="#apply" data-track="cta_sticky">✨ 無料体験を申し込む</a>
-      </div>
-    </div>
-  </div>
-</div>
 </main>
+
 <script>
-// ====== 設定（★FormspreeのURLをここに貼り付けてください） ======
+// ====== 設定 ======
 const SETTINGS = {
   schoolName: "トリイ 音楽教室",
   tel: "0740-22-2063",
+  lineUrl: "https://lin.ee/EEMZjMTA",
   formspreeEndpoint: "https://formspree.io/f/mnjnejae", // ここを差し替える
-  submitMode: "real" 
+  submitMode: "real"
 };
 
 // ====== Utility ======
-const $ = (sel, root=document) => root.querySelector(sel);
+const $  = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
 // 年号
@@ -874,9 +1012,17 @@ $("#year").textContent = new Date().getFullYear();
 
 // 電話番号差し替え
 function applyTel(tel){
-  $$('a[href^="tel:"]').forEach(a => a.setAttribute("href", "tel:" + tel.replaceAll("-", "")));
+  const normalized = (tel || "").toString().replace(/[^\d]/g, "");
+  $$('a[href^="tel:"]').forEach(a => a.setAttribute("href", "tel:" + normalized));
 }
 applyTel(SETTINGS.tel);
+
+// LINEリンク差し替え（必要ならここだけ変更で全ボタン反映）
+function applyLine(url){
+  if(!url) return;
+  $$('a[href^="https://lin.ee/"]').forEach(a => a.setAttribute("href", url));
+}
+applyLine(SETTINGS.lineUrl);
 
 // クリック計測
 window.dataLayer = window.dataLayer || [];
@@ -885,6 +1031,7 @@ function track(eventName, params={}){
     window.dataLayer.push({ event: eventName, ...params });
   }catch(e){}
 }
+
 $$("[data-track]").forEach(el=>{
   el.addEventListener("click", () => {
     track("lp_click", { label: el.getAttribute("data-track") });
@@ -905,7 +1052,6 @@ function hide(el){
   el.style.display = "none";
   el.textContent = "";
 }
-
 function normalizePhone(v){
   return (v || "").toString().replace(/[^\d]/g, "");
 }
@@ -950,16 +1096,14 @@ form.addEventListener("submit", async (e) => {
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = "送信中...";
 
-  try {
+  try{
     // Formspreeへの送信（FormDataを使用することでname属性を自動収集）
     const formData = new FormData(form);
-    
+
     const response = await fetch(SETTINGS.formspreeEndpoint, {
       method: "POST",
       body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
+      headers: { "Accept": "application/json" }
     });
 
     if (response.ok) {
@@ -967,13 +1111,13 @@ form.addEventListener("submit", async (e) => {
       form.reset();
       submitBtn.style.display = "none"; // 送信後はボタンを隠す
     } else {
-      const result = await response.json();
+      let result = {};
+      try{ result = await response.json(); }catch(e){}
       throw new Error(result.error || "Submit failed");
     }
-
   } catch (err) {
     console.error(err);
-    show(errMsg, "エラーが発生しました。お手数ですが、お電話（" + SETTINGS.tel + "）にてお申し込みください。");
+    show(errMsg, "エラーが発生しました。お手数ですが、LINEまたはお電話（" + SETTINGS.tel + "）にてお申し込みください。");
     submitBtn.disabled = false;
     submitBtn.innerHTML = originalText;
   }
@@ -988,3 +1132,4 @@ $$('a[href="#apply"]').forEach(a=>{
 </script>
 </body>
 </html>
+```
