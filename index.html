@@ -403,7 +403,7 @@ details p{
 
 /* Footer + Sticky CTA */
 footer{
-  padding: 28px 0 120px; /* sticky分 */
+  padding: 28px 0 120px; /* sticky分（PC用） */
   color: var(--muted);
   font-size: 12.5px;
   line-height: 1.8;
@@ -435,7 +435,7 @@ footer{
   display:flex;
   gap: 10px;
   width: 100%;
-  flex-wrap: wrap; /* 3ボタンでも崩れにくく */
+  flex-wrap: wrap;
 }
 .sticky .actions a, .sticky .actions button{
   flex: 1 1 0;
@@ -453,6 +453,12 @@ footer{
   .hero-grid{grid-template-columns: 1fr}
   .form-wrap{grid-template-columns: 1fr}
   .grid-3{grid-template-columns: 1fr}
+}
+
+/* ★スマホでは追従バナーを非表示 + フッター余白を戻す */
+@media (max-width: 859px){
+  .sticky{display:none !important;}
+  footer{padding-bottom:28px;}
 }
 
 /* Small helpers */
@@ -852,7 +858,6 @@ footer{
 
       <div class="form-wrap">
         <form id="applyForm" novalidate>
-          <!-- Formspree 制御用の隠しフィールド -->
           <input type="hidden" name="_subject" value="【体験レッスン申込】ウェブサイトより">
 
           <div class="field">
@@ -974,7 +979,7 @@ footer{
     </div>
   </footer>
 
-  <!-- Sticky CTA -->
+  <!-- Sticky CTA（PCのみ表示：CSSでスマホは非表示） -->
   <div class="sticky" role="region" aria-label="固定CTA">
     <div class="container">
       <div class="bar">
@@ -1066,7 +1071,6 @@ form.addEventListener("submit", async (e) => {
   const phone = normalizePhone(phoneRaw);
   const contact = $("#contact").value.trim();
 
-  // Minimal validation
   if(!parentName){
     show(errMsg, "保護者さまのお名前をご入力ください。");
     $("#parentName").focus();
@@ -1088,16 +1092,13 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  // Tracking
   track("lp_conversion", { type: "trial_apply", childAge, contact });
 
-  // ボタン無効化（二重送信防止）
   submitBtn.disabled = true;
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = "送信中...";
 
   try{
-    // Formspreeへの送信（FormDataを使用することでname属性を自動収集）
     const formData = new FormData(form);
 
     const response = await fetch(SETTINGS.formspreeEndpoint, {
@@ -1109,7 +1110,7 @@ form.addEventListener("submit", async (e) => {
     if (response.ok) {
       show(okMsg, "ありがとうございます。お申し込みを受け付けました。担当より折り返しご連絡いたします。");
       form.reset();
-      submitBtn.style.display = "none"; // 送信後はボタンを隠す
+      submitBtn.style.display = "none";
     } else {
       let result = {};
       try{ result = await response.json(); }catch(e){}
@@ -1133,3 +1134,5 @@ $$('a[href="#apply"]').forEach(a=>{
 </body>
 </html>
 ```
+
+結論：追従型バナー（下部固定CTA）は **幅859px以下（スマホ想定）で非表示** になるように修正しました。
