@@ -50,6 +50,16 @@
     padding:0 18px;
   }
 
+  /* Image Style Added */
+  .img-resp {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  .img-shadow { box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
   /* Header */
   header{
     position:sticky;
@@ -513,6 +523,9 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-card">
+          <!-- ★画像挿入箇所：hero-main.jpg (先生とママとお子さんがピアノで微笑んでいる写真) -->
+          <img src="images/prm-01_dl.jpg" alt="音楽教室での楽しいひととき" class="img-resp" style="border-radius: var(--radius2) var(--radius2) 0 0; max-height: 380px;">
+          
           <div class="inner">
             <div class="kicker">
               <span class="pill">無料体験レッスン</span>
@@ -576,6 +589,9 @@
             </div>
           </div>
 
+          <!-- ★画像挿入箇所：lesson-group.jpg (みんなでピアノの周りで歌っている写真) -->
+          <img src="images/prm-08_dl.jpg" alt="みんなで歌うレッスン" class="img-resp img-shadow">
+
           <div class="side-card">
             <div class="inner">
               <p class="side-title">持ち物はこれだけ</p>
@@ -612,8 +628,8 @@
           <p>「相談しても具体策がない…」という不安に、体験の場で“実際の様子”から一緒に確認していきます。</p>
         </div>
         <div class="card">
-          <h3>🎵 年齢に応じたオリジナルカリキュラム</h3>
-          <p>見て・真似て・少しやってみる。子どもが自分のペースで踏み出しやすい声かけと流れを大切にしています。</p>
+          <h3>🎵 年齢に応じたカリキュラム</h3>
+          <p>見て・真似て・少しやってみる。子どもが自分のペースで踏み出しやすい声かけを大切にしています。</p>
         </div>
         <div class="card">
           <h3>🫶 無理に急がせない成功体験</h3>
@@ -635,15 +651,17 @@
       <ul class="list" aria-label="体験で見られる場面">
         <li class="li">
           <div class="badge">1</div>
-          <div>
+          <div style="flex:1">
             <strong>歌うのが恥ずかしかった子が…</strong>
             <span>隣の子がだんだん大きな声で歌えるようになっていくのを見て、少しずつ声を出し始めることがあります。</span>
           </div>
+          <!-- ★画像挿入箇所：lesson-board.jpg (先生が五線譜を指差している写真) -->
+          <img src="images/prm-25_dl.jpg" alt="ボードを使ったレッスン" style="width:120px; border-radius:12px;" class="img-shadow">
         </li>
 
         <li class="li">
           <div class="badge">2</div>
-          <div>
+          <div style="flex:1">
             <strong>先生の前に行けなかった子が…</strong>
             <span>「タンブリンを取りに来れるかな？」という先生の呼びかけで、取りに行けたり、返すときに「ありがとう」が言える子も出てきます。</span>
           </div>
@@ -651,17 +669,19 @@
 
         <li class="li">
           <div class="badge">3</div>
-          <div>
-            <strong>「タンタンタン♪」のリズムが…</strong>
-            <span>「これならできそう！」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。（積極的なリズム体験）</span>
+          <div style="flex:1">
+            <strong>「弾いてみたい」が自然に出る…</strong>
+            <span>最初は見ていただけの子が、いつの間にか鍵盤に手を伸ばしている。その瞬間を私たちは大切にしています。</span>
           </div>
+          <!-- ★画像挿入箇所：lesson-piano.jpg (女の子がピアノを弾いている写真) -->
+          <img src="images/prm-26_dl.jpg" alt="ピアノに挑戦" style="width:120px; border-radius:12px;" class="img-shadow">
         </li>
 
         <li class="li">
           <div class="badge">4</div>
-          <div>
-            <strong>先生のお話し中に…</strong>
-            <span>ピアノやエレクトーンの鍵盤にそっと指を伸ばしている子もいます。きっと「弾きたい」が自然に出ているんですね。</span>
+          <div style="flex:1">
+            <strong>「これならできそう！」のリズム</strong>
+            <span>「タンタンタン♪」と叩いているうちに、先生や他の子のテンポに合わせる楽しさに気づく子もいます。</span>
           </div>
         </li>
       </ul>
@@ -683,8 +703,6 @@
   <section id="flow">
     <div class="container">
       <h2 class="section-title">無料体験レッスンの流れ</h2>
-      <p class="section-lead">初めての方が不安にならないよう、“見通し”を明確にしています。</p>
-
       <div class="grid-3">
         <div class="card">
           <h3>① 受付・ヒアリング</h3>
@@ -768,52 +786,42 @@
               <option>電話が良い</option>
               <option>どれでも</option>
             </select>
-            <div class="help">※LINEでのご連絡をご希望の方は、先にLINE追加しておくとスムーズです。</div>
           </div>
 
           <div class="field">
             <label for="message">ご相談・気になっていること <span class="muted">（任意）</span></label>
-            <textarea id="message" name="ご相談内容" placeholder="例）家では元気ですが、園では声が小さく…、ご希望の体験コースなど"></textarea>
+            <textarea id="message" name="ご相談内容" placeholder="例）家では元気ですが、園では声が小さく…"></textarea>
           </div>
 
           <div class="form-actions">
             <button class="btn btn-primary" type="submit" id="submitBtn" data-track="form_submit">✨ フォームで申し込む</button>
             <a class="btn btn-line" href="https://lin.ee/cvu4eQI" target="_blank" rel="noopener" data-track="line_apply">
-              💬 LINEで相談する（申込じゃなくてOK）
+              💬 LINEで相談する
             </a>
           </div>
 
           <div id="okMsg" class="ok" role="status" aria-live="polite"></div>
           <div id="errMsg" class="err" role="alert" aria-live="assertive"></div>
-
-          <p class="note">
-            ※「入会するかどうか」は、体験後にゆっくりで大丈夫です。<br/>
-            ※無理な勧誘はありません。
-          </p>
         </form>
 
         <div class="side-card" style="height:100%;">
-          <div class="inner">
-            <p class="side-title">迷っている方へ（ここからでOKです）</p>
+          <!-- ★画像挿入箇所：lesson-boy.jpg (男の子がエレクトーンを弾いている写真) -->
+          <img src="images/prm-09_dl.jpg" alt="楽しく演奏" class="img-resp" style="border-radius: var(--radius2) var(--radius2) 0 0;">
 
+          <div class="inner">
+            <p class="side-title">迷っている方へ</p>
             <div class="quote" style="margin-top:10px">
               <p>
-                無料体験で確かめて欲しいのは、<br/>
-                “上手にできるか”ではなく、<br/>
-                <strong>「うちの子にも、動き出す瞬間がある」</strong>という手応えです。
+                「うちの子にも、動き出す瞬間がある」という手応えを、ぜひ体験で感じてください。
               </p>
-              <small>まずはLINEで状況を教えてください（申込じゃなくて大丈夫）。</small>
+              <small>まずはLINEで相談だけ、でも大歓迎です。</small>
             </div>
-
             <div class="divider"></div>
-
             <div class="form-actions" style="margin-top:12px">
               <a class="btn btn-line" href="https://lin.ee/cvu4eQI" target="_blank" rel="noopener" data-track="line_side">
-                💬 LINEで相談する（申込じゃなくてOK）
+                💬 LINEで相談する
               </a>
-              <a class="btn btn-ghost" href="#scenes" data-track="read_more_side">👀 体験で見られることを見る</a>
             </div>
-
           </div>
         </div>
       </div>
@@ -826,14 +834,14 @@
       <p>
         教室名：ヤマハ音楽教室（㈱）トリイ　大津わにセンター<br/>
         住所：滋賀県大津市和邇中浜３６６　今西ビル2F / 駐車場：あり<br/>
-        電話：<a href="tel:0740222063" class="muted" data-track="tel_footer" aria-label="電話で問い合わせ">0740-22-2063</a><br/>
+        電話：<a href="tel:0740222063" class="muted" data-track="tel_footer">0740-22-2063</a><br/>
         <a href="https://www.toriimusic.co.jp/privacy_policy/" class="muted">プライバシーポリシー</a>
       </p>
       <p class="muted">© <span id="year"></span> Music School. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- ✅下部追従CTA：LINE（主）＋フォーム（次点）の2つだけ -->
+  <!-- 下部追従CTA -->
   <div class="sticky" role="region" aria-label="固定CTA">
     <div class="container">
       <div class="bar">
@@ -856,126 +864,52 @@
 </main>
 
 <script>
-/* ====== 設定 ====== */
 const SETTINGS = {
   schoolName: "トリイ 音楽教室",
   tel: "0740-22-2063",
   lineUrl: "https://lin.ee/cvu4eQI",
-  formspreeEndpoint: "https://formspree.io/f/mnjnejae",
-  submitMode: "real"
+  formspreeEndpoint: "https://formspree.io/f/mnjnejae"
 };
 
-/* ====== Utility ====== */
 const $  = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
-/* 年号 */
 $("#year").textContent = new Date().getFullYear();
 
-/* LINEリンク差し替え（必要ならここだけ変更で全ボタン反映） */
-function applyLine(url){
-  if(!url) return;
-  $$('a[href^="https://lin.ee/"]').forEach(a => a.setAttribute("href", url));
-}
-applyLine(SETTINGS.lineUrl);
-
-/* クリック計測（GTM/GA4に dataLayer event を送る前提） */
-window.dataLayer = window.dataLayer || [];
-function track(eventName, params={}){
-  try{ window.dataLayer.push({ event: eventName, ...params }); }catch(e){}
-}
-$$("[data-track]").forEach(el=>{
-  el.addEventListener("click", () => {
-    track("lp_click", { label: el.getAttribute("data-track") });
-  });
-});
-
-/* ====== Form handling (Formspree Fetch) ====== */
 const form = $("#applyForm");
 const okMsg = $("#okMsg");
 const errMsg = $("#errMsg");
 const submitBtn = $("#submitBtn");
 
-function show(el, text){
-  el.textContent = text;
-  el.style.display = "block";
-}
-function hide(el){
-  el.style.display = "none";
-  el.textContent = "";
-}
-function normalizePhone(v){
-  return (v || "").toString().replace(/[^\d]/g, "");
-}
-
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  hide(okMsg); hide(errMsg);
-
-  const parentName = $("#parentName").value.trim();
-  const childAge   = $("#childAge").value.trim();
-  const phoneRaw   = $("#phone").value.trim();
-  const phone      = normalizePhone(phoneRaw);
-  const contact    = $("#contact").value.trim();
-
-  if(!parentName){
-    show(errMsg, "保護者さまのお名前をご入力ください。");
-    $("#parentName").focus();
-    return;
-  }
-  if(!childAge){
-    show(errMsg, "お子さんの年齢を選択してください。");
-    $("#childAge").focus();
-    return;
-  }
-  if(!phone || phone.length < 10){
-    show(errMsg, "電話番号を正しくご入力ください。");
-    $("#phone").focus();
-    return;
-  }
-  if(!contact){
-    show(errMsg, "ご希望の連絡方法を選択してください。");
-    $("#contact").focus();
-    return;
-  }
-
-  track("lp_conversion", { type: "trial_apply", childAge, contact });
+  okMsg.style.display = "none";
+  errMsg.style.display = "none";
 
   submitBtn.disabled = true;
-  const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = "送信中...";
 
   try{
-    const formData = new FormData(form);
-
     const response = await fetch(SETTINGS.formspreeEndpoint, {
       method: "POST",
-      body: formData,
+      body: new FormData(form),
       headers: { "Accept": "application/json" }
     });
 
     if (response.ok) {
-      show(okMsg, "ありがとうございます。お申し込みを受け付けました。担当より折り返しご連絡いたします。");
+      okMsg.textContent = "お申し込みを受け付けました。担当より折り返しご連絡いたします。";
+      okMsg.style.display = "block";
       form.reset();
       submitBtn.style.display = "none";
     } else {
-      let result = {};
-      try{ result = await response.json(); }catch(e){}
-      throw new Error(result.error || "Submit failed");
+      throw new Error();
     }
   }catch(err){
-    console.error(err);
-    show(errMsg, "エラーが発生しました。お手数ですが、LINE（緑のボタン）からご連絡ください。お電話の場合は " + SETTINGS.tel + " までお願いします。");
+    errMsg.textContent = "送信エラーが発生しました。LINEからご連絡いただけますと幸いです。";
+    errMsg.style.display = "block";
     submitBtn.disabled = false;
-    submitBtn.innerHTML = originalText;
+    submitBtn.innerHTML = "✨ フォームで申し込む";
   }
-});
-
-/* UX: CTAボタン押下でフォームにフォーカス */
-$$('a[href="#apply"]').forEach(a=>{
-  a.addEventListener("click", () => {
-    setTimeout(()=> $("#parentName")?.focus(), 400);
-  });
 });
 </script>
 </body>
