@@ -791,7 +791,34 @@
               <option>6歳（未就学）</option>
             </select>
           </div>
+<!-- ✅ 体験レッスン希望日時の追加 -->
+<div class="field">
+  <label for="trialDate">体験レッスンのご希望日時 <span class="muted">（必須）</span></label>
+  <select id="trialDate" name="希望日時" required>
+    <option value="">選択してください</option>
+    
+    <optgroup label="ぷらいまりー①（主に年少さん対象）">
+      <option value="ぷら①：2/16(月) 15:30">2/16(月) 15:30</option>
+      <option value="ぷら①：3/16(月) 15:30">3/16(月) 15:30</option>
+      <option value="ぷら①：4/13(月) 15:30">4/13(月) 15:30</option>
+      <option value="ぷら①：2/10(火) 15:00">2/10(火) 15:00</option>
+      <option value="ぷら①：3/10(火) 15:00">3/10(火) 15:00</option>
+      <option value="ぷら①：4/7(火) 15:00">4/7(火) 15:00</option>
+    </optgroup>
 
+    <optgroup label="ぷらいまりー②（主に年中・年長さん対象）">
+      <option value="ぷら②：2/14(土) 13:00">2/14(土) 13:00</option>
+      <option value="ぷら②：3/7(土) 13:00">3/7(土) 13:00</option>
+      <option value="ぷら②：4/4(土) 13:00">4/4(土) 13:00</option>
+      <option value="ぷら②：2/16(月) 17:15">2/16(月) 17:15</option>
+      <option value="ぷら②：3/16(月) 17:15">3/16(月) 17:15</option>
+      <option value="ぷら②：4/13(月) 17:15">4/13(月) 17:15</option>
+    </optgroup>
+    
+    <option value="上記以外の日程を希望（LINEで相談）">上記以外の日程を希望（LINEで相談したい）</option>
+  </select>
+  <div class="help">※ご都合がつかない場合は、一番下の「上記以外」を選んでご相談ください。</div>
+</div>
           <div class="field">
             <label for="phone">電話番号 <span class="muted">（必須）</span></label>
             <input id="phone" name="電話番号" type="tel" inputmode="tel" autocomplete="tel" required placeholder="例）09012345678" />
